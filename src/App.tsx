@@ -1,5 +1,8 @@
+import { RouterProvider } from "react-router-dom";
+import router from "./routes/MainRoutes";
+
 function App() {
-  return <h1>My Portfolio</h1>;
+  return <RouterProvider router={router} />;
 }
 
 export default App;

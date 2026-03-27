@@ -11,15 +11,13 @@
     "paths": {
       "@/*": ["./src/*"],
       "assets/*": ["./src/assets/*"],
-      // "components/*": ["./src/components/*"],
-      // "layout/*": ["./src/layout/*"],
-      // "pages/*": ["./src/pages/*"],
-      // "services/*": ["./src/services/*"],
-      // "styles/*": ["./src/styles/*"],
-      // "types/*": ["./src/types/*"]
+      "components/*": ["./src/components/*"],
+      "layout/*": ["./src/layout/*"],
+      "pages/*": ["./src/pages/*"],
+      "services/*": ["./src/services/*"],
+      "styles/*": ["./src/styles/*"],
+      "types/*": ["./src/types/*"]
     },
-
-    /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
@@ -27,7 +25,10 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    /* Linting */
+    /* JSON + Lottie fix */
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
