@@ -1,13 +1,15 @@
 import { Outlet } from "react-router-dom";
-import Header from "./layout.header";
-import Footer from "./layout.footer";
+import Header from "./Header/layout.header";
+import Footer from "./Footer/layout.footer";
 
+const HEADER_HEIGHT = 80;
 const MainLayout = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-900">
+    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Header />
 
-      <main className="flex-grow pt-20">
+      {/* MAIN CONTENT */}
+      <main style={{ flex: 1, marginTop: HEADER_HEIGHT }}>
         <Outlet />
       </main>
 

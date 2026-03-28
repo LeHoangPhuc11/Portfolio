@@ -1,7 +1,7 @@
 import { FaCode, FaUser, FaGithub } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import DeveloperPage from "@/components/common/DeveloperPage";
 import "./IntroPage.css";
+import DeveloperPage from "@/components/common/developerPage";
 
 const IntroPage = () => {
   const navigate = useNavigate();

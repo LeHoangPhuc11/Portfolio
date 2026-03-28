@@ -1,0 +1,46 @@
+/* FOOTER CHUNG */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px; /* gọn hơn */
+  background: linear-gradient(90deg, #2e026d, #000, #0a2472);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  width: 100%;
+  min-height: 30px; /* thấp, gọn */
+}
+
+/* ICONS */
+.footer-icons {
+  display: flex;
+  gap: 20px; /* khoảng cách icon vừa đủ */
+  margin-top: 5px; /* gọn */
+}
+
+.footer-icons a {
+  font-size: 24px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+/* hover chỉ đổi background gradient header + shadow */
+.footer-icons a:hover {
+  color: #ffffff; /* màu xanh neon nhẹ */
+  background: rgba(108, 99, 255, 0.2);
+  transform: scale(1.1);
+}
+/* TEXT */
+.footer-text {
+  font-size: 14px; /* nhỏ hơn */
+  color: #ccc;
+  margin: 0;
+}

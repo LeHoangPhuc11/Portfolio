@@ -1,0 +1,203 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(90deg, #2e026d, #000, #0a2472);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  height: 90px;
+  color: white;
+}
+
+/* WRAPPER */
+.header-inner {
+  width: 100%;
+  max-width: 1200px; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 30px; /* to hơn */
+}
+
+.logo-icon {
+  color: #6c63ff;
+  font-size: 20px;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  gap: 50px; 
+  margin-left: 80px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: #aaa;
+  transition: all 0.25s ease;
+  font-size: 19px; 
+  position: relative; 
+}
+
+.menu-item svg {
+  font-size: 18px;
+  transition: all 0.25s ease;
+}
+
+/* underline ẩn mặc định */
+.menu-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px; 
+  width: 0;
+  height: 1px; 
+  border-radius: 2px;
+  background: linear-gradient(90deg, #9b59b6, #3498db); /* gradient tím → xanh */
+  background-size: 200% 100%; 
+  transition: all 0.25s ease;
+}
+
+/* hover → gạch chạy */
+.menu-item:hover::after {
+  width: 100%;
+  animation: underline-slide 2s linear infinite;
+}
+
+/* active → gạch luôn hiện */
+.menu-item.active::after {
+  width: 100%;
+  animation: underline-slide 2s linear infinite;
+}
+
+
+
+/* RIGHT */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.icon {
+  font-size: 25px;
+  cursor: pointer;
+  color: #ccc;
+  transition: all 0.25s ease;
+
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-img {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.25s ease;
+}
+
+/* BUTTON */
+.contact-btn {
+  position: relative;
+  border-radius: 6px;
+  padding: 0 20px;
+  height: 42px;
+  font-size: 16px;
+  color: white; /* chữ luôn trắng */
+  background: rgba(165, 15, 15, 0.111); /* nền mờ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+/* viền gradient chạy */
+.contact-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 6px;
+  padding: 2px; /* độ dày viền */
+  background: linear-gradient(90deg, #542567, #225c82, #77408d, #253494);
+  background-size: 200% 100%; /* để chạy animation */
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude; /* chỉ show viền */
+  z-index: -1;
+  animation: border-slide 3s linear infinite;
+}
+
+/* animation chạy gradient từ trái sang phải */
+@keyframes border-slide {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* hover → glow + scale */
+.contact-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 8px #9b59b6, 0 0 12px #3498db;
+}
+
+
+/* ================== HOVER + NEON GRADIENT ================== */
+:root {
+  --neon-gradient: linear-gradient(90deg, #9b59b6, #3498db);
+}
+
+/* menu-item hover & active */
+.menu-item:hover,
+.menu-item.active {
+  background: var(--neon-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* icon trong menu hover */
+.menu-item:hover svg,
+.menu-item.active svg {
+  color: transparent;
+  background: var(--neon-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #918e8e;
+}
+
+
+/* menu-item, icon, icon-img, button scale hover */
+.menu-item,
+.icon,
+.icon-img{
+  transition: all 0.25s ease;
+}
+
+.menu-item:hover,
+.icon:hover,
+.icon-img:hover{
+  transform: scale(1.1);
+}
