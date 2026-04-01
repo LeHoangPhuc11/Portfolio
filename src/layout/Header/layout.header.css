@@ -1,18 +1,42 @@
+:root {
+  --header-bg: linear-gradient(90deg, #2e026d, #000, #0a2472);
+  --text-color: #ffffff;
+  --text-secondary: #aaa;
+  --icon-color: #ccc;
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --mobile-bg: linear-gradient(180deg, #2e026d, #000);
+  --contact-border: linear-gradient(90deg, #542567, #225c82, #77408d, #253494);
+  --menu-underline: linear-gradient(90deg, #9b59b6, #3498db);
+  --menu-hover-gradient: linear-gradient(90deg, #9b59b6, #3498db);
+  --menu-icon-hover: #918e8e;
+}
+[data-theme="light"] {
+  --header-bg: linear-gradient(90deg, #6e8aa2);
+  --text-color: #111;
+  --text-secondary: #040404;
+  --icon-color: #080808;
+  --glass-bg: rgba(7, 6, 6, 0.05);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --mobile-bg: linear-gradient(180deg, #6e8aa2, #000);
+  --contact-border: linear-gradient(90deg, #6e8aa2, #d1dbdb, #6e8aa2);
+  --menu-underline: linear-gradient(90deg, #6e8aa2, #000000, #6e8aa2);
+  --menu-hover-gradient: linear-gradient(90deg, #8705d2, #000000);
+  --menu-icon-hover: #0e0d0d;
+}
+
 .header {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background: linear-gradient(90deg, #2e026d, #000, #0a2472);
+  background: var(--header-bg);
+  color: var(--text-color);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  height: 90px;
-  color: white;
+  min-height: 90px;
 }
-
-/* WRAPPER */
 .header-inner {
   width: 100%;
-  max-width: 1200px; 
+  max-width: 1500px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,62 +51,72 @@
   font-weight: 600;
   font-size: 30px; /* to hơn */
 }
-
 .logo-icon {
   color: #6c63ff;
   font-size: 20px;
+}
+.lang-btn {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.25s ease;
+}
+.lang-btn:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 8px #9b59b6,
+    0 0 12px #3498db;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* MENU */
 .menu {
   display: flex;
-  gap: 50px; 
+  gap: 50px;
   margin-left: 80px;
 }
-
 .menu-item {
   display: flex;
   align-items: center;
   gap: 6px;
   cursor: pointer;
-  color: #aaa;
+  color: var(--text-secondary);
   transition: all 0.25s ease;
-  font-size: 19px; 
-  position: relative; 
+  font-size: 19px;
+  position: relative;
 }
-
 .menu-item svg {
   font-size: 18px;
   transition: all 0.25s ease;
 }
-
-/* underline ẩn mặc định */
 .menu-item::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
-  bottom: -4px; 
+  bottom: -4px;
   width: 0;
-  height: 1px; 
+  height: 1px;
   border-radius: 2px;
-  background: linear-gradient(90deg, #9b59b6, #3498db); /* gradient tím → xanh */
-  background-size: 200% 100%; 
+  background: var(--menu-underline);
+  background-size: 200% 100%;
   transition: all 0.25s ease;
 }
-
-/* hover → gạch chạy */
 .menu-item:hover::after {
   width: 100%;
   animation: underline-slide 2s linear infinite;
 }
-
-/* active → gạch luôn hiện */
 .menu-item.active::after {
   width: 100%;
   animation: underline-slide 2s linear infinite;
 }
-
-
 
 /* RIGHT */
 .right {
@@ -90,29 +124,17 @@
   align-items: center;
   gap: 30px;
 }
-
 .icon {
   font-size: 25px;
   cursor: pointer;
-  color: #ccc;
   transition: all 0.25s ease;
-
-  background: rgba(255, 255, 255, 0.05);
+  color: var(--icon-color);
+  background: var(--glass-bg);
   padding: 8px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.icon-img {
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-  border-radius: 50%;
-  padding: 5px;
-  background: rgba(255, 255, 255, 0.05);
-  transition: all 0.25s ease;
 }
 
 /* BUTTON */
@@ -122,8 +144,8 @@
   padding: 0 20px;
   height: 42px;
   font-size: 16px;
-  color: white; /* chữ luôn trắng */
-  background: rgba(165, 15, 15, 0.111); /* nền mờ */
+  color: var(--text-color);
+  background: rgba(41, 232, 105, 0.111);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,71 +155,242 @@
   transition: all 0.3s ease;
   backdrop-filter: blur(4px);
 }
-
-/* viền gradient chạy */
 .contact-btn::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   border-radius: 6px;
   padding: 2px; /* độ dày viền */
-  background: linear-gradient(90deg, #542567, #225c82, #77408d, #253494);
+  background: var(--contact-border);
   background-size: 200% 100%; /* để chạy animation */
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude; /* chỉ show viền */
   z-index: -1;
   animation: border-slide 3s linear infinite;
 }
-
-/* animation chạy gradient từ trái sang phải */
 @keyframes border-slide {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
-
-/* hover → glow + scale */
 .contact-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 8px #9b59b6, 0 0 12px #3498db;
+  box-shadow:
+    0 0 8px #9b59b6,
+    0 0 12px #3498db;
 }
-
 
 /* ================== HOVER + NEON GRADIENT ================== */
 :root {
   --neon-gradient: linear-gradient(90deg, #9b59b6, #3498db);
 }
-
-/* menu-item hover & active */
 .menu-item:hover,
 .menu-item.active {
-  background: var(--neon-gradient);
+  background: var(--menu-hover-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-/* icon trong menu hover */
 .menu-item:hover svg,
 .menu-item.active svg {
   color: transparent;
-  background: var(--neon-gradient);
+  color: var(--menu-icon-hover);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #918e8e;
 }
 
-
-/* menu-item, icon, icon-img, button scale hover */
 .menu-item,
-.icon,
-.icon-img{
+.icon {
   transition: all 0.25s ease;
 }
-
 .menu-item:hover,
-.icon:hover,
-.icon-img:hover{
+.icon:hover {
   transform: scale(1.1);
+}
+
+/* ===== LEFT GROUP ===== */
+.left-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+/* Ẩn menu toggle trên desktop */
+.menu-toggle {
+  display: none;
+}
+/* Flag img */
+.lang-btn img {
+  width: 24px;
+  height: 16px;
+  object-fit: cover;
+}
+
+/* ===== RESPONSIVE ===== */
+/* Tablet */
+@media (max-width: 1024px) {
+  .header-inner {
+    padding: 0 20px;
+  }
+
+  .menu {
+    gap: 30px;
+    margin-left: 40px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .menu-item {
+    font-size: 16px;
+  }
+}
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 0;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+  }
+
+  .left-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo {
+    margin: 0;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+/* ===== MOBILE MENU (PURPLE + BLUE STYLE) ===== */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 260px;
+  height: 100%;
+  background: var(--mobile-bg);
+  z-index: 999;
+  transition: 0.3s ease;
+  padding: 20px;
+}
+.mobile-menu.show {
+  left: 0;
+}
+/* HEADER */
+.mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #fff;
+}
+/* Nút X */
+.mobile-header span:first-child {
+  order: 2;
+  cursor: pointer;
+  font-size: 20px;
+  color: #ff4d4f;
+}
+.mobile-header span:last-child {
+  order: 1;
+}
+/* ITEM */
+.mobile-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 10px;
+  font-size: 15px;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+/* ICON */
+.mobile-item svg {
+  font-size: 17px;
+}
+/* HOVER: khung gradient tím xanh */
+.mobile-item:hover {
+  color: #fff;
+  border: 1px solid transparent;
+  background: linear-gradient(#000, #464545) padding-box;
+}
+/* ACTIVE */
+.mobile-item.active {
+  color: #fff;
+  border: 1px solid transparent;
+  background: linear-gradient(#000, #464545) padding-box;
+}
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(55, 55, 60, 0.6);
+  z-index: 998;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+}
+/* ===== DESKTOP ===== */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
 }

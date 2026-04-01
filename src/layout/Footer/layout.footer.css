@@ -1,46 +1,72 @@
-/* FOOTER CHUNG */
+:root {
+  --footer-bg: linear-gradient(90deg, #2e026d, #000, #0a2472);
+  --footer-text: #ffffff;
+  --footer-text-secondary: #ccc;
+  --footer-icon-bg: rgba(255, 255, 255, 0.05);
+  --footer-icon-hover-bg: rgba(108, 99, 255, 0.2);
+}
+[data-theme="light"] {
+  --footer-bg: linear-gradient(90deg, #6e8aa2, #ffffff, #6e8aa2);
+  --footer-text: #111;
+  --footer-text-secondary: #555;
+  --footer-icon-bg: rgba(39, 39, 39, 0.05);
+  --footer-icon-hover-bg: rgba(7, 7, 7, 0.2);
+}
+
 .footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px; /* gọn hơn */
-  background: linear-gradient(90deg, #2e026d, #000, #0a2472);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  color: white;
-  text-align: center;
+  padding: 10px 16px;
   width: 100%;
-  min-height: 30px; /* thấp, gọn */
+  max-width: 100%;
+  background: var(--footer-bg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  color: var(--footer-text);
+  text-align: center;
+  min-height: 30px;
+  overflow-x: hidden;
 }
-
-/* ICONS */
 .footer-icons {
   display: flex;
-  gap: 20px; /* khoảng cách icon vừa đủ */
-  margin-top: 5px; /* gọn */
+  gap: 16px;
+  margin-top: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-
 .footer-icons a {
-  font-size: 24px;
-  color: white;
+  font-size: 22px;
+  color: var(--footer-text);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--footer-icon-bg);
   padding: 6px;
   border-radius: 50%;
   transition: all 0.3s ease;
 }
-
-/* hover chỉ đổi background gradient header + shadow */
 .footer-icons a:hover {
-  color: #ffffff; /* màu xanh neon nhẹ */
-  background: rgba(108, 99, 255, 0.2);
+  color: var(--footer-text);
+  background: var(--footer-icon-hover-bg);
   transform: scale(1.1);
 }
-/* TEXT */
 .footer-text {
-  font-size: 14px; /* nhỏ hơn */
-  color: #ccc;
-  margin: 0;
+  font-size: 13px;
+  color: var(--footer-text-secondary);
+  margin-top: 4px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .footer-icons {
+    gap: 12px;
+  }
+  .footer-icons a {
+    font-size: 20px;
+    padding: 5px;
+  }
+  .footer-text {
+    font-size: 12px;
+  }
 }

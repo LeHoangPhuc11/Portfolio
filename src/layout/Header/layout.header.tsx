@@ -1,67 +1,110 @@
-import { Layout, Button } from "antd";
 import {
   HomeOutlined,
   UserOutlined,
   ProjectOutlined,
   CodeOutlined,
-  FacebookOutlined,
   GithubOutlined,
 } from "@ant-design/icons";
-
 import "./layout.header.css";
+import { useLang } from "@/components/context/LangContext";
+import { useState } from "react";
+import { useTheme } from "@/components/context/ThemeContext";
 
-const { Header } = Layout;
+const AppHeader: React.FC = () => {
+  const { lang, toggleLang } = useLang();
+  const [openMenu, setOpenMenu] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
-const AppHeader = () => {
   return (
-    <Header className="header">
-      <div className="header-inner">
-        {/* LEFT: LOGO */}
-        <div className="logo">
-          <span className="logo-icon">⚡</span>
-          <span className="logo-text">Phuc Dev</span>
-        </div>
+    <>
+      <div className="header">
+        <div className="header-inner">
+          {/* LEFT */}
+          <div className="left-group">
+            <div className="logo">
+              <span className="logo-icon">⚡</span>
+              <span className="logo-text">Phuc Dev</span>
+            </div>
 
-        {/* CENTER: MENU */}
-        <div className="menu">
-          <div className="menu-item active">
-            <HomeOutlined /> Home
+            {/* MENU TOGGLE */}
+            <div className="menu-toggle" onClick={() => setOpenMenu(true)}>
+              ☰
+            </div>
           </div>
 
-          <div className="menu-item">
-            <UserOutlined /> About
+          {/* MENU DESKTOP */}
+          <div className="menu">
+            <div className="menu-item active">
+              <HomeOutlined /> {lang === "vi" ? "Trang Chủ" : "Home"}
+            </div>
+            <div className="menu-item">
+              <UserOutlined /> {lang === "vi" ? "Giới Thiệu" : "About"}
+            </div>
+            <div className="menu-item">
+              <ProjectOutlined /> {lang === "vi" ? "Dự Án" : "Projects"}
+            </div>
+            <div className="menu-item">
+              <CodeOutlined /> {lang === "vi" ? "Kĩ Năng" : "Skills"}
+            </div>
           </div>
 
-          <div className="menu-item">
-            <ProjectOutlined /> Projects
-          </div>
+          {/* RIGHT */}
+          <div className="right">
+            <a
+              href="https://github.com/LeHoangPhuc11"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GithubOutlined className="icon" />
+            </a>
 
-          <div className="menu-item">
-            <CodeOutlined /> Skills
+            {/* LANGUAGE */}
+            <div className="lang-btn" onClick={toggleLang}>
+              <img
+                src={
+                  lang === "vi"
+                    ? "src/assets/img/vietnam.png"
+                    : "src/assets/img/anh.png"
+                }
+                alt="language"
+              />
+            </div>
+            <div className="theme-btn" onClick={toggleTheme}>
+              {theme === "light" ? "🌙" : "☀️"}
+            </div>
+            <div className="contact-btn">
+              {lang === "vi" ? "Liên Hệ" : "Contact"}
+            </div>
           </div>
-        </div>
-
-        {/* RIGHT: SOCIAL + BUTTON */}
-        <div className="right">
-          <img src="src/assets/img/zalo.png" alt="zalo" className="icon-img" />
-          <a
-            href="https://www.facebook.com/le.hoangphuc.7906932?locale=vi_VN"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FacebookOutlined className="icon" />
-          </a>
-          <a
-            href="https://github.com/LeHoangPhuc11"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GithubOutlined className="icon" />
-          </a>
-          <div className="contact-btn">Contact</div>
         </div>
       </div>
-    </Header>
+
+      {/* OVERLAY */}
+      {openMenu && (
+        <div className="overlay" onClick={() => setOpenMenu(false)}></div>
+      )}
+
+      {/* MOBILE MENU */}
+      <div className={`mobile-menu ${openMenu ? "show" : ""}`}>
+        <div className="mobile-header">
+          <span onClick={() => setOpenMenu(false)}>✕</span>
+          <span>Menu</span>
+        </div>
+
+        <div className="mobile-item">
+          <HomeOutlined /> {lang === "vi" ? "Trang chủ" : "Home"}
+        </div>
+        <div className="mobile-item">
+          <CodeOutlined /> {lang === "vi" ? "Kỹ năng" : "Skills"}
+        </div>
+        <div className="mobile-item">
+          <ProjectOutlined /> {lang === "vi" ? "Dự án" : "Projects"}
+        </div>
+        <div className="mobile-item">
+          <UserOutlined /> {lang === "vi" ? "Giới thiệu" : "About"}
+        </div>
+      </div>
+    </>
   );
 };
 
