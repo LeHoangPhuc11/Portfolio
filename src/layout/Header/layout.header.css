@@ -14,6 +14,7 @@
 [data-theme="light"] {
   --header-bg: linear-gradient(90deg, #6e8aa2);
   --text-color: #111;
+  --text-color-contact: #ffffff;
   --text-secondary: #040404;
   --icon-color: #080808;
   --glass-bg: rgba(7, 6, 6, 0.05);
@@ -26,6 +27,11 @@
 }
 
 .header {
+  position: fixed; /* làm header đứng yên */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 900; /* cao hơn các element khác như blobs */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,6 +39,7 @@
   color: var(--text-color);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   min-height: 90px;
+  transition: background 0.3s ease;
 }
 .header-inner {
   width: 100%;
@@ -122,7 +129,7 @@
 .right {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 15px;
 }
 .icon {
   font-size: 25px;
@@ -144,8 +151,8 @@
   padding: 0 20px;
   height: 42px;
   font-size: 16px;
-  color: var(--text-color);
-  background: rgba(41, 232, 105, 0.111);
+  color: var(--text-color-contact);
+  background: rgba(0, 0, 0, 0.111);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -214,6 +221,26 @@
 .menu-item:hover,
 .icon:hover {
   transform: scale(1.1);
+}
+
+.theme-btn {
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: var(--icon-color);
+  background: var(--glass-bg);
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.theme-btn:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.6),
+    0 0 12px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* ===== LEFT GROUP ===== */
@@ -392,5 +419,66 @@
 
   .mobile-menu {
     display: none;
+  }
+}
+
+/* ===== HEADER ANIMATIONS ===== */
+.logo-icon {
+  animation: logoSlideIn 0.6s ease-out forwards;
+}
+.logo-text {
+  opacity: 0;
+  animation: logoTextSlide 0.6s ease-out forwards;
+  animation-delay: 0.4s;
+}
+.menu {
+  animation: menuDrop 0.7s ease-out;
+}
+.right {
+  animation: rightSlideIn 0.7s ease-out;
+}
+
+/* ===== KEYFRAMES ===== */
+@keyframes logoSlideIn {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes logoTextSlide {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes menuDrop {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rightSlideIn {
+  from {
+    transform: translateX(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

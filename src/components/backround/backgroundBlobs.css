@@ -1,0 +1,56 @@
+/* ===== Theme variables ===== */
+:root {
+  --bg-gradient: linear-gradient(120deg, #2e026d, #000000, #0a2472);
+  --blob-color-1: #2a59e6;
+  --blob-color-2: #8b28e7;
+  --blob-color-3: #f00bddbf;
+}
+
+[data-theme="light"] {
+  --bg-gradient: linear-gradient(120deg, #6e8aa2, #dfe9f3, #6e8aa2);
+  --blob-color-1: #59a6f3;
+  --blob-color-2: #79fbeb; 
+  --blob-color-3: #62eef1; 
+}
+
+/* ===== Background ===== */
+body {
+  background: var(--bg-gradient);
+  transition: background 0.4s ease;
+}
+
+/* ===== Blob container ===== */
+.bg-blobs {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* ===== Blob base style ===== */
+.blob {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+
+  filter: blur(70px);
+  opacity: 0.7;
+  mix-blend-mode: screen;
+
+  transition: transform 0.3s ease, background 0.4s ease;
+}
+
+/* ===== Lặp màu cho tất cả blobs ===== */
+.blob:nth-child(3n + 1) {
+  background: radial-gradient(circle, var(--blob-color-1), transparent 70%);
+}
+
+.blob:nth-child(3n + 2) {
+  background: radial-gradient(circle, var(--blob-color-2), transparent 70%);
+}
+
+.blob:nth-child(3n + 3) {
+  background: radial-gradient(circle, var(--blob-color-3), transparent 70%);
+}

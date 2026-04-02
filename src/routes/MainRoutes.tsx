@@ -2,6 +2,7 @@ import IntroPage from "../page/Intro/IntroPage";
 import MainLayout from "../layout/layout.main";
 import HomePage from "../page/HomePage";
 import { createBrowserRouter } from "react-router-dom";
+import ContactPage from "@/page/ContactPage";
 
 const MainRouters = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const MainRouters = createBrowserRouter([
         element: <HomePage />,
       },
     ],
+  },
+  {
+    path: "/contact",
+    element: <ContactPage />,
   },
 ]);
 

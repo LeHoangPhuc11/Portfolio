@@ -5,16 +5,24 @@ import Footer from "./Footer/layout.footer";
 // const HEADER_HEIGHT = 80;
 const MainLayout = () => {
   return (
-    <div style={{ display: "flex", flexDirection: "column", minHeight: "100dvh" }}>
-      <Header />
+    <>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100dvh",
+        }}
+      >
+        <Header />
 
-      {/* MAIN CONTENT */}
-      <main style={{ flex: 1, padding: "40px 20px" ,minHeight: "60vh",}}>
-        <Outlet />
-      </main>
+        {/* MAIN CONTENT */}
+        <main style={{ flex: 1, padding: "130px 20px 40px", minHeight: "80vh" }}>
+          <Outlet />
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

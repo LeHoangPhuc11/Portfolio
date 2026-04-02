@@ -9,11 +9,14 @@ import "./layout.header.css";
 import { useLang } from "@/components/context/LangContext";
 import { useState } from "react";
 import { useTheme } from "@/components/context/ThemeContext";
+import { useNavigate } from "react-router-dom";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 const AppHeader: React.FC = () => {
   const { lang, toggleLang } = useLang();
   const [openMenu, setOpenMenu] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -70,9 +73,9 @@ const AppHeader: React.FC = () => {
               />
             </div>
             <div className="theme-btn" onClick={toggleTheme}>
-              {theme === "light" ? "🌙" : "☀️"}
+              {theme === "light" ? <FaMoon /> : <FaSun />}
             </div>
-            <div className="contact-btn">
+            <div className="contact-btn" onClick={() => navigate("/contact")}>
               {lang === "vi" ? "Liên Hệ" : "Contact"}
             </div>
           </div>
@@ -91,7 +94,7 @@ const AppHeader: React.FC = () => {
           <span>Menu</span>
         </div>
 
-        <div className="mobile-item">
+        <div className="mobile-item active">
           <HomeOutlined /> {lang === "vi" ? "Trang chủ" : "Home"}
         </div>
         <div className="mobile-item">
