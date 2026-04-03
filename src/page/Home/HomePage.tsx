@@ -3,10 +3,13 @@ import "./HomePage.css";
 import { useLang } from "@/components/context/LangContext";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import AboutPage from "../About/AboutPage";
+import ProjectPage from "../Project/ProjectPage";
+import SkillsPage from "../Skills/SkillsPage";
 
 const content = {
   vi: {
-    intro: "Xin Chào, Tôi là Lê Hoàng Phúc",
+    intro: "Xin Chào, Tôi là Phúc",
     title: "Frontend Developer",
     desc: "Tôi xây dựng giao diện người dùng hiện đại, responsive, tối ưu trải nghiệm và hiệu năng trên nhiều thiết bị, sử dụng React và các công nghệ web hiện đại.",
     tags: ["React", "JavaScript", "TypeScript", "Tailwind CSS"],
@@ -14,7 +17,7 @@ const content = {
     contactBtn: "Liên Hệ ✉",
   },
   en: {
-    intro: "Hello, I'm Le Hoang Phuc",
+    intro: "Hello, I'm Phuc",
     title: "Frontend Developer",
     desc: "I build modern, responsive user interfaces, optimizing user experience and performance across devices using React and modern web technologies.",
     tags: ["React", "JavaScript", "TypeScript", "Tailwind CSS"],
@@ -31,8 +34,7 @@ const HomePage = () => {
   return (
     <div className="home">
       <BackgroundBlobs />
-
-      <div className="home-container">
+      <div id="home" className="home-container">
         {/* LEFT */}
         <div className="left">
           <div className="content">
@@ -45,12 +47,18 @@ const HomePage = () => {
               ))}
             </div>
             <div className="actions">
-              <button className="btn primary">
+              <button
+                className="btn primary"
+                onClick={() => {
+                  const el = document.getElementById("projects");
+                  el?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+              >
                 {t.projectBtn} <FaExternalLinkAlt size={10} />
               </button>
               <button
                 className="btn secondary"
-                onClick={() => navigate("/contact")}
+                onClick={() => navigate("/home/contact")}
               >
                 {t.contactBtn}
               </button>
@@ -59,7 +67,7 @@ const HomePage = () => {
         </div>
 
         {/* RIGHT */}
-        <div className="right">
+        <div className="right1">
           <div className="orbit-container">
             {/* Center Avatar */}
             <div className="center-avatar">
@@ -88,6 +96,9 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      <AboutPage />
+      <ProjectPage />
+      <SkillsPage />
     </div>
   );
 };

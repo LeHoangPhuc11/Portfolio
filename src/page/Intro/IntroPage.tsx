@@ -3,6 +3,12 @@ import { useNavigate } from "react-router-dom";
 import "./IntroPage.css";
 import DeveloperPage from "@/components/common/developerPage";
 
+const icons = [
+  { icon: FaCode },
+  { icon: FaUser, link: "/home" },
+  { icon: FaGithub, link: "https://github.com/LeHoangPhuc11" },
+];
+
 const IntroPage = () => {
   const navigate = useNavigate();
 
@@ -12,11 +18,26 @@ const IntroPage = () => {
         <div className="intro_content">
           <div className="intro_left">
             <div className="intro_icon_container">
-              {[FaCode, FaUser, FaGithub].map((Icon, i) => (
-                <div key={i} className="intro_icon">
-                  <Icon />
-                </div>
-              ))}
+              {icons.map((item, i) => {
+                const Icon = item.icon;
+                return item.link ? (
+                  <a
+                    key={i}
+                    href={item.link}
+                    target={item.link.startsWith("http") ? "_blank" : "_self"}
+                    rel={
+                      item.link.startsWith("http") ? "noreferrer" : undefined
+                    }
+                    className="intro_icon"
+                  >
+                    <Icon />
+                  </a>
+                ) : (
+                  <div key={i} className="intro_icon">
+                    <Icon />
+                  </div>
+                );
+              })}
             </div>
             <h1 className="intro_title">
               <span className="intro_word intro_word1">Welcome</span>

@@ -25,7 +25,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   color: var(--footer-text);
   text-align: center;
-  min-height: 30px;
   overflow-x: hidden;
 }
 .footer-icons {
@@ -58,7 +57,7 @@
 }
 
 /* RESPONSIVE */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .footer-icons {
     gap: 12px;
   }
@@ -70,7 +69,6 @@
     font-size: 12px;
   }
 }
-
 /* ANIMATION: slide up when load */
 .footer {
   animation: footerSlideUp 0.8s ease-out;

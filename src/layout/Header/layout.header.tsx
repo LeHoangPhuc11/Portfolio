@@ -7,7 +7,7 @@ import {
 } from "@ant-design/icons";
 import "./layout.header.css";
 import { useLang } from "@/components/context/LangContext";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTheme } from "@/components/context/ThemeContext";
 import { useNavigate } from "react-router-dom";
 import { FaMoon, FaSun } from "react-icons/fa";
@@ -17,6 +17,34 @@ const AppHeader: React.FC = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
+  const [active, setActive] = useState("home");
+
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+    });
+    setOpenMenu(false);
+  };
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section, div[id]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.6,
+      },
+    );
+    sections.forEach((section) => {
+      if (section.id) observer.observe(section);
+    });
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
@@ -26,7 +54,7 @@ const AppHeader: React.FC = () => {
           <div className="left-group">
             <div className="logo">
               <span className="logo-icon">⚡</span>
-              <span className="logo-text">Phuc Dev</span>
+              <span className="logo-text">{lang === "vi" ? "Lê Hoàng Phúc" : "Le Hoang Phuc"}</span>
             </div>
 
             {/* MENU TOGGLE */}
@@ -34,19 +62,30 @@ const AppHeader: React.FC = () => {
               ☰
             </div>
           </div>
-
           {/* MENU DESKTOP */}
           <div className="menu">
-            <div className="menu-item active">
+            <div
+              className={`menu-item ${active === "home" ? "active" : ""}`}
+              onClick={() => scrollToSection("home")}
+            >
               <HomeOutlined /> {lang === "vi" ? "Trang Chủ" : "Home"}
             </div>
-            <div className="menu-item">
+            <div
+              className={`menu-item ${active === "about" ? "active" : ""}`}
+              onClick={() => scrollToSection("about")}
+            >
               <UserOutlined /> {lang === "vi" ? "Giới Thiệu" : "About"}
             </div>
-            <div className="menu-item">
-              <ProjectOutlined /> {lang === "vi" ? "Dự Án" : "Projects"}
+            <div
+              className={`menu-item ${active === "projects" ? "active" : ""}`}
+              onClick={() => scrollToSection("projects")}
+            >
+              <ProjectOutlined /> {lang === "vi" ? "Portfolios" : "Portfolios"}
             </div>
-            <div className="menu-item">
+            <div
+              className={`menu-item ${active === "skills" ? "active" : ""}`}
+              onClick={() => scrollToSection("skills")}
+            >
               <CodeOutlined /> {lang === "vi" ? "Kĩ Năng" : "Skills"}
             </div>
           </div>
@@ -75,7 +114,10 @@ const AppHeader: React.FC = () => {
             <div className="theme-btn" onClick={toggleTheme}>
               {theme === "light" ? <FaMoon /> : <FaSun />}
             </div>
-            <div className="contact-btn" onClick={() => navigate("/contact")}>
+            <div
+              className="contact-btn"
+              onClick={() => navigate("/home/contact")}
+            >
               {lang === "vi" ? "Liên Hệ" : "Contact"}
             </div>
           </div>
@@ -93,18 +135,30 @@ const AppHeader: React.FC = () => {
           <span onClick={() => setOpenMenu(false)}>✕</span>
           <span>Menu</span>
         </div>
-
-        <div className="mobile-item active">
+        
+        <div
+          className={`mobile-item ${active === "home" ? "active" : ""}`}
+          onClick={() => scrollToSection("home")}
+        >
           <HomeOutlined /> {lang === "vi" ? "Trang chủ" : "Home"}
         </div>
-        <div className="mobile-item">
-          <CodeOutlined /> {lang === "vi" ? "Kỹ năng" : "Skills"}
+        <div
+          className={`mobile-item ${active === "about" ? "active" : ""}`}
+          onClick={() => scrollToSection("about")}
+        >
+          <UserOutlined /> {lang === "vi" ? "Giới thiệu" : "About"}
         </div>
-        <div className="mobile-item">
+        <div
+          className={`mobile-item ${active === "projects" ? "active" : ""}`}
+          onClick={() => scrollToSection("projects")}
+        >
           <ProjectOutlined /> {lang === "vi" ? "Dự án" : "Projects"}
         </div>
-        <div className="mobile-item">
-          <UserOutlined /> {lang === "vi" ? "Giới thiệu" : "About"}
+        <div
+          className={`mobile-item ${active === "skills" ? "active" : ""}`}
+          onClick={() => scrollToSection("skills")}
+        >
+          <CodeOutlined /> {lang === "vi" ? "Kỹ năng" : "Skills"}
         </div>
       </div>
     </>

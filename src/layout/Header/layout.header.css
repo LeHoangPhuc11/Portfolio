@@ -213,7 +213,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 .menu-item,
 .icon {
   transition: all 0.25s ease;
@@ -285,39 +284,32 @@
   .header {
     padding: 10px 0;
   }
-
   .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 12px;
   }
-
   .left-group {
     display: flex;
     align-items: center;
     gap: 8px;
   }
-
   .logo {
     margin: 0;
   }
-
   .logo-text {
     display: none;
   }
-
   .menu-toggle {
     display: block;
     font-size: 24px;
     color: white;
     cursor: pointer;
   }
-
   .menu {
     display: none;
   }
-
   .right {
     display: flex;
     align-items: center;
@@ -340,7 +332,6 @@
 .mobile-menu.show {
   left: 0;
 }
-/* HEADER */
 .mobile-header {
   display: flex;
   align-items: center;
@@ -349,7 +340,6 @@
   margin-bottom: 20px;
   color: #fff;
 }
-/* Nút X */
 .mobile-header span:first-child {
   order: 2;
   cursor: pointer;
@@ -359,35 +349,29 @@
 .mobile-header span:last-child {
   order: 1;
 }
-/* ITEM */
 .mobile-item {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 12px 10px;
   font-size: 15px;
-  color: #fff;
+  color: #ffffff;
   border-radius: 6px;
   cursor: pointer;
-  transition: all 0.25s ease;
 }
-/* ICON */
 .mobile-item svg {
   font-size: 17px;
 }
-/* HOVER: khung gradient tím xanh */
 .mobile-item:hover {
   color: #fff;
   border: 1px solid transparent;
   background: linear-gradient(#000, #464545) padding-box;
 }
-/* ACTIVE */
 .mobile-item.active {
   color: #fff;
   border: 1px solid transparent;
   background: linear-gradient(#000, #464545) padding-box;
 }
-/* OVERLAY */
 .overlay {
   position: fixed;
   top: 0;
@@ -403,7 +387,6 @@
   .menu {
     display: none;
   }
-
   .menu-toggle {
     display: block;
     font-size: 24px;
@@ -416,7 +399,6 @@
   .menu-toggle {
     display: none;
   }
-
   .mobile-menu {
     display: none;
   }
