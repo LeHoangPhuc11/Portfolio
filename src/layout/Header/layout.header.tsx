@@ -7,10 +7,10 @@ import {
 } from "@ant-design/icons";
 import "./layout.header.css";
 import { useLang } from "@/components/context/LangContext";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "@/components/context/ThemeContext";
 import { useNavigate } from "react-router-dom";
-import { FaMoon, FaSun } from "react-icons/fa";
+import { FaCode, FaFolderOpen, FaMoon, FaSun } from "react-icons/fa";
 
 const AppHeader: React.FC = () => {
   const { lang, toggleLang } = useLang();
@@ -80,13 +80,13 @@ const AppHeader: React.FC = () => {
               className={`menu-item ${active === "projects" ? "active" : ""}`}
               onClick={() => scrollToSection("projects")}
             >
-              <ProjectOutlined /> {lang === "vi" ? "Portfolios" : "Portfolios"}
+              <FaFolderOpen /> {lang === "vi" ? "Portfolios" : "Portfolios"}
             </div>
             <div
               className={`menu-item ${active === "skills" ? "active" : ""}`}
               onClick={() => scrollToSection("skills")}
             >
-              <CodeOutlined /> {lang === "vi" ? "Kĩ Năng" : "Skills"}
+              <FaCode /> {lang === "vi" ? "Kĩ Năng" : "Skills"}
             </div>
           </div>
 

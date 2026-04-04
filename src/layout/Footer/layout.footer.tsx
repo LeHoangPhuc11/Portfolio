@@ -10,7 +10,7 @@ const Footer = () => {
     <>
       <div className={`footer ${theme}`}>
         <div className="footer-text">
-          © {new Date().getFullYear()} LeHoangPhuc. All rights reserved.
+          © {new Date().getFullYear()} LeHoangPhuc_Portfolio.
         </div>
 
         <div className="footer-icons">

@@ -1,10 +1,10 @@
-import { FaCode, FaUser, FaGithub } from "react-icons/fa";
+import { FaUser, FaGithub, FaEnvelope } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import "./IntroPage.css";
 import DeveloperPage from "@/components/common/developerPage";
 
 const icons = [
-  { icon: FaCode },
+  { icon: FaEnvelope , link: "/home/contact" },
   { icon: FaUser, link: "/home" },
   { icon: FaGithub, link: "https://github.com/LeHoangPhuc11" },
 ];
