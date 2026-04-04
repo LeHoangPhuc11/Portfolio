@@ -2,7 +2,7 @@ import IntroPage from "../page/Intro/IntroPage";
 import MainLayout from "../layout/layout.main";
 import HomePage from "../page/Home/HomePage";
 import { Route, Routes } from "react-router-dom";
-import ContactPage from "@/page/ContactPage";
+import ContactPage from "@/page/Contact/ContactPage";
 import DetailPage from "@/page/DetailPage";
 
 const MainRouters = () => {

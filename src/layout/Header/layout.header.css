@@ -10,6 +10,8 @@
   --menu-underline: linear-gradient(90deg, #9b59b6, #3498db);
   --menu-hover-gradient: linear-gradient(90deg, #9b59b6, #3498db);
   --menu-icon-hover: #918e8e;
+  --lang-text-color: #ffffff;
+  --lang-icon-color: #ffffff;
 }
 [data-theme="light"] {
   --header-bg: linear-gradient(90deg, #6e8aa2);
@@ -24,6 +26,8 @@
   --menu-underline: linear-gradient(90deg, #6e8aa2, #000000, #6e8aa2);
   --menu-hover-gradient: linear-gradient(90deg, #8705d2, #000000);
   --menu-icon-hover: #0e0d0d;
+  --lang-text-color: #000;
+  --lang-icon-color: #000;
 }
 
 .header {
@@ -132,7 +136,7 @@
   gap: 15px;
 }
 .icon {
-  font-size: 25px;
+  font-size: 20px;
   cursor: pointer;
   transition: all 0.25s ease;
   color: var(--icon-color);
@@ -252,11 +256,29 @@
 .menu-toggle {
   display: none;
 }
+
 /* Flag img */
-.lang-btn img {
-  width: 24px;
-  height: 16px;
-  object-fit: cover;
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.lang-text {
+  color: var(--lang-text-color);
+  font-size: 15px;
+  font-weight: 500; 
+}
+.lang-icon {
+  color: var(--lang-icon-color);
 }
 
 /* ===== RESPONSIVE ===== */

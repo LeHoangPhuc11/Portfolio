@@ -9,8 +9,8 @@ import "./layout.header.css";
 import { useLang } from "@/components/context/LangContext";
 import { useEffect, useState } from "react";
 import { useTheme } from "@/components/context/ThemeContext";
-import { useNavigate } from "react-router-dom";
-import { FaCode, FaFolderOpen, FaMoon, FaSun } from "react-icons/fa";
+import { useLocation, useNavigate } from "react-router-dom";
+import { FaCode, FaFolderOpen, FaGlobe, FaMoon, FaSun } from "react-icons/fa";
 
 const AppHeader: React.FC = () => {
   const { lang, toggleLang } = useLang();
@@ -18,16 +18,41 @@ const AppHeader: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
   const [active, setActive] = useState("home");
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const el = document.getElementById(location.state.scrollTo);
+
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
+  useEffect(() => {
+    if (location.pathname !== "/home") {
+      setActive("");
+    }
+  }, [location.pathname]);
 
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-    });
+    if (location.pathname !== "/home") {
+      navigate("/home", { state: { scrollTo: id } });
+    } else {
+      document.getElementById(id)?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+
     setOpenMenu(false);
   };
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section, div[id]");
+    const sections = document.querySelectorAll(
+      "#home, #about, #projects, #skills",
+    );
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -40,11 +65,13 @@ const AppHeader: React.FC = () => {
         threshold: 0.6,
       },
     );
+
     sections.forEach((section) => {
-      if (section.id) observer.observe(section);
+      observer.observe(section);
     });
+
     return () => observer.disconnect();
-  }, []);
+  }, [location.pathname]);
 
   return (
     <>
@@ -54,7 +81,9 @@ const AppHeader: React.FC = () => {
           <div className="left-group">
             <div className="logo">
               <span className="logo-icon">⚡</span>
-              <span className="logo-text">{lang === "vi" ? "Lê Hoàng Phúc" : "Le Hoang Phuc"}</span>
+              <span className="logo-text">
+                {lang === "vi" ? "Lê Hoàng Phúc" : "Le Hoang Phuc"}
+              </span>
             </div>
 
             {/* MENU TOGGLE */}
@@ -102,14 +131,8 @@ const AppHeader: React.FC = () => {
 
             {/* LANGUAGE */}
             <div className="lang-btn" onClick={toggleLang}>
-              <img
-                src={
-                  lang === "vi"
-                    ? "src/assets/img/vietnam.png"
-                    : "src/assets/img/anh.png"
-                }
-                alt="language"
-              />
+              <FaGlobe className="lang-icon" />
+              <span className="lang-text">{lang === "vi" ? "VN" : "EN"}</span>
             </div>
             <div className="theme-btn" onClick={toggleTheme}>
               {theme === "light" ? <FaMoon /> : <FaSun />}
@@ -135,7 +158,7 @@ const AppHeader: React.FC = () => {
           <span onClick={() => setOpenMenu(false)}>✕</span>
           <span>Menu</span>
         </div>
-        
+
         <div
           className={`mobile-item ${active === "home" ? "active" : ""}`}
           onClick={() => scrollToSection("home")}
