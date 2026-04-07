@@ -1,16 +1,20 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
-import { LangProvider } from "./components/context/LangContext.tsx";
 import { ThemeProvider } from "./components/context/ThemeContext.tsx";
+import { LngProvider } from "./components/context/lng.context.tsx";
+import "./i18n";
+import { BrowserRouter } from "react-router-dom";
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
     <ThemeProvider>
-      <LangProvider>
-        <App />
-      </LangProvider>
+      <LngProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </LngProvider>
     </ThemeProvider>
-  </StrictMode>
+  </React.StrictMode>,
 );

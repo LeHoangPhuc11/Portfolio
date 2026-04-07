@@ -1,12 +1,11 @@
-import { BrowserRouter, RouterProvider } from "react-router-dom";
-import router from "./routes/MainRoutes";
+import { Route, Routes } from "react-router-dom";
 import MainRouters from "./routes/MainRoutes";
 
 function App() {
   return (
-    <BrowserRouter>
-      <MainRouters />
-    </BrowserRouter>
+      <Routes>
+      <Route path="/*" element={<MainRouters />} />
+    </Routes>
   );
 }
 

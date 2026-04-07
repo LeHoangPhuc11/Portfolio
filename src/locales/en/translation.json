@@ -1,0 +1,108 @@
+{
+  "menu": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Portfolio",
+    "skills": "Skills",
+    "contact": "Contact",
+    "tech": "Tech Stack"
+  },
+  "name": "Le Hoang Phuc",
+  "skills": {
+    "title": "Skills"
+  },
+  "home": {
+    "intro": "Hello, I'm Phuc",
+    "title": "Frontend Developer",
+    "desc": "I build modern, responsive user interfaces, optimizing user experience and performance across devices using React and modern web technologies.",
+    "tags": ["React", "JavaScript", "TypeScript", "Tailwind CSS"],
+    "projectBtn": "Projects",
+    "contactBtn": "Contact ✉"
+  },
+
+  "projects": {
+    "title": "Portfolio",
+    "details": "Details",
+    "list": [
+      {
+        "title": "Portfolio Website",
+        "description": "A personal portfolio built with React and TypeScript, featuring a responsive design for multiple devices. The application supports dark/light mode, multi-language switching, optimized performance, and provides a smooth, modern user experience.",
+        "tech": ["React", "TypeScript", "CSS"]
+      },
+      {
+        "title": "Key_Nexus",
+        "description": "An e-commerce web app built with React and TypeScript, supporting dark/light mode. Features include a chatbox and backend with CRUD and user roles, ensuring smooth user experience. Intuitive, fast-loading interface, currently under development, aiming for a modern, flexible, and scalable platform.",
+        "tech": ["React", "TypeScript", "CSS"]
+      }
+    ]
+  },
+  "techGroups": [
+    {
+      "title": "Frontend & Tools",
+      "items": [
+        { "name": "React", "icon": "src/assets/img/react.png" },
+        { "name": "TypeScript", "icon": "src/assets/img/typescript.png" },
+        { "name": "JavaScript", "icon": "src/assets/img/javascript.png" },
+        { "name": "HTML", "icon": "src/assets/img/html.png" },
+        { "name": "CSS", "icon": "src/assets/img/css.png" },
+        { "name": "Tailwind CSS", "icon": "src/assets/img/tailwind.png" },
+        { "name": "Git", "icon": "src/assets/img/git.png" },
+        { "name": "Postman", "icon": "src/assets/img/postman.png" }
+      ]
+    }
+  ],
+  "about": {
+    "title": "About Me",
+    "intro": "Hello, I'm",
+    "name": "Le Hoang Phuc",
+    "role": "Frontend Developer",
+    "desc1": "I am currently a final-year IT student at Industrial University of Ho Chi Minh City (IUH), focusing on modern web interface development. I am proficient in ReactJS, TypeScript, and frontend technologies to build responsive and high-performance user interfaces.",
+    "desc2": "I have built my personal portfolio website and am developing a real-world web project. I also participated in team projects, gaining practical experience and improving my frontend development skills.",
+    "desc3": "I have strong self-learning ability, logical thinking, and a proactive mindset. I aim to work in a professional environment to further develop my skills and contribute to real-world products.",
+    "cvBtn": "Download CV",
+    "projectBtn": "View Projects"
+  },
+  "contact": {
+    "name": "Le Hoang Phuc",
+    "phone": "Phone",
+    "address": "Address",
+    "location": "Ho Chi Minh City",
+    "email": "Email",
+    "github": "GitHub",
+    "contactBtn": "Contact Now"
+  },
+  "detail": {
+    "description": "Description",
+    "role": "Frontend Responsibilities",
+    "tech": "Technologies",
+    "github": "GitHub"
+  },
+  "project": {
+    "portfolio": {
+      "title": "Portfolio Website",
+      "description": "A personal portfolio built with React and TypeScript, featuring a responsive design that adapts to multiple devices. The application supports dark/light mode, flexible internationalization, and is optimized for performance and smooth user experience. The website demonstrates the ability to build modern interfaces and effectively manage frontend architecture.",
+      "role": [
+        "Build UI with React + TypeScript + CSS",
+        "Design modern layout sections",
+        "Implement responsive UI",
+        "Build Dark/Light mode",
+        "Integrate i18n",
+        "Optimize UI/UX and animations",
+        "Manage state (theme, language)"
+      ]
+    },
+    "key_nexus": {
+      "title": "Key Nexus",
+      "description": "An e-commerce web application built with React and TypeScript, featuring a user interface that supports dark/light mode. The project integrates a chatbox and backend with CRUD functionalities and user authorization, and is still under development. It offers an intuitive interface, fast loading speed, and an optimized experience for shopping and product management. The project aims to become a modern, flexible, and scalable e-commerce platform for future enhancements.",
+      "role": [
+        "Build responsive UI",
+        "Develop reusable components",
+        "Create Admin Dashboard",
+        "Handle CRUD via API",
+        "Manage state with Context/Zustand",
+        "Optimize UX/UI",
+        "Support Dark/Light mode"
+      ]
+    }
+  }
+}

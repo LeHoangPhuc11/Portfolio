@@ -16,7 +16,6 @@
   --tab-color: #a5b4fc;
   --tab-active-color: #fff;
 }
-
 [data-theme="light"] {
   --text-color: #000000;
   --subtitle-color: #444;
@@ -36,8 +35,6 @@
   --tab-active-color: #fff;
 }
 
-/* ===== PHẦN CSS HIỆN TẠI CỦA BẠN ===== */
-/* Không sửa gì hết, giữ nguyên toàn bộ */
 .projects-section {
   width: 100%;
   min-height: 100vh;
@@ -205,6 +202,7 @@
   flex-grow: 1;
   text-align: justify;
 }
+
 .details-btn {
   margin-left: auto;
   padding: 5px 12px;
@@ -222,6 +220,7 @@
   transform: translateY(-2px);
   box-shadow: 0 0 12px var(--btn-hover-shadow);
 }
+
 .project-tech {
   display: flex;
   gap: 8px;

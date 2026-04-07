@@ -6,19 +6,21 @@ import {
   GithubOutlined,
 } from "@ant-design/icons";
 import "./layout.header.css";
-import { useLang } from "@/components/context/LangContext";
 import { useEffect, useState } from "react";
 import { useTheme } from "@/components/context/ThemeContext";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FaCode, FaFolderOpen, FaGlobe, FaMoon, FaSun } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+import { useLang } from "@/components/context/lng.context";
 
 const AppHeader: React.FC = () => {
-  const { lang, toggleLang } = useLang();
   const [openMenu, setOpenMenu] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
   const [active, setActive] = useState("home");
   const location = useLocation();
+  const { lng, toggleLanguage } = useLang();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (location.state?.scrollTo) {
@@ -79,11 +81,21 @@ const AppHeader: React.FC = () => {
         <div className="header-inner">
           {/* LEFT */}
           <div className="left-group">
-            <div className="logo">
-              <span className="logo-icon">⚡</span>
-              <span className="logo-text">
-                {lang === "vi" ? "Lê Hoàng Phúc" : "Le Hoang Phuc"}
-              </span>
+            <div
+              className="logo"
+              onClick={() => {
+                if (location.pathname !== "/home") {
+                  navigate("/home");
+                }
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              <img
+                src="src/assets/img/logo.png"
+                alt="Logo"
+                className="logo-icon"
+              />
+              <span className="logo-text">{t("name")}</span>
             </div>
 
             {/* MENU TOGGLE */}
@@ -97,25 +109,25 @@ const AppHeader: React.FC = () => {
               className={`menu-item ${active === "home" ? "active" : ""}`}
               onClick={() => scrollToSection("home")}
             >
-              <HomeOutlined /> {lang === "vi" ? "Trang Chủ" : "Home"}
+              <HomeOutlined /> {t("menu.home")}
             </div>
             <div
               className={`menu-item ${active === "about" ? "active" : ""}`}
               onClick={() => scrollToSection("about")}
             >
-              <UserOutlined /> {lang === "vi" ? "Giới Thiệu" : "About"}
+              <UserOutlined /> {t("menu.about")}
             </div>
             <div
               className={`menu-item ${active === "projects" ? "active" : ""}`}
               onClick={() => scrollToSection("projects")}
             >
-              <FaFolderOpen /> {lang === "vi" ? "Portfolios" : "Portfolios"}
+              <FaFolderOpen /> {t("menu.projects")}
             </div>
             <div
               className={`menu-item ${active === "skills" ? "active" : ""}`}
               onClick={() => scrollToSection("skills")}
             >
-              <FaCode /> {lang === "vi" ? "Kĩ Năng" : "Skills"}
+              <FaCode /> {t("menu.skills")}
             </div>
           </div>
 
@@ -130,9 +142,9 @@ const AppHeader: React.FC = () => {
             </a>
 
             {/* LANGUAGE */}
-            <div className="lang-btn" onClick={toggleLang}>
+            <div className="lang-btn" onClick={toggleLanguage}>
               <FaGlobe className="lang-icon" />
-              <span className="lang-text">{lang === "vi" ? "VN" : "EN"}</span>
+              <span className="lang-text">{lng === "vi" ? "VN" : "EN"}</span>
             </div>
             <div className="theme-btn" onClick={toggleTheme}>
               {theme === "light" ? <FaMoon /> : <FaSun />}
@@ -141,7 +153,7 @@ const AppHeader: React.FC = () => {
               className="contact-btn"
               onClick={() => navigate("/home/contact")}
             >
-              {lang === "vi" ? "Liên Hệ" : "Contact"}
+              {t("menu.contact")}
             </div>
           </div>
         </div>
@@ -163,25 +175,25 @@ const AppHeader: React.FC = () => {
           className={`mobile-item ${active === "home" ? "active" : ""}`}
           onClick={() => scrollToSection("home")}
         >
-          <HomeOutlined /> {lang === "vi" ? "Trang chủ" : "Home"}
+          <HomeOutlined /> {t("menu.home")}
         </div>
         <div
           className={`mobile-item ${active === "about" ? "active" : ""}`}
           onClick={() => scrollToSection("about")}
         >
-          <UserOutlined /> {lang === "vi" ? "Giới thiệu" : "About"}
+          <UserOutlined /> {t("menu.about")}
         </div>
         <div
           className={`mobile-item ${active === "projects" ? "active" : ""}`}
           onClick={() => scrollToSection("projects")}
         >
-          <ProjectOutlined /> {lang === "vi" ? "Dự án" : "Projects"}
+          <ProjectOutlined /> {t("menu.projects")}
         </div>
         <div
           className={`mobile-item ${active === "skills" ? "active" : ""}`}
           onClick={() => scrollToSection("skills")}
         >
-          <CodeOutlined /> {lang === "vi" ? "Kỹ năng" : "Skills"}
+          <CodeOutlined /> {t("menu.skills")}
         </div>
       </div>
     </>

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./SkillsPage.css";
-import { useLang } from "@/components/context/LangContext";
+import { useTranslation } from "react-i18next";
 
 const skills = [
   { name: "React", icon: "src/assets/img/react.png" },
@@ -27,7 +27,7 @@ const skills = [
 ];
 
 const SkillsPage: React.FC = () => {
-  const { lang } = useLang();
+  const { t } = useTranslation();
   const ref = useRef<HTMLElement | null>(null);
   const [show, setShow] = useState(false);
 
@@ -48,7 +48,7 @@ const SkillsPage: React.FC = () => {
       ref={ref}
       className={`skills-section ${show ? "show" : ""}`}
     >
-      <h2 className="skills-title">{lang === "en" ? "Skills" : "Kỹ năng"}</h2>
+      <h2 className="skills-title"> {t("skills.title")}</h2>
 
       <div className="slider">
         <div className="slider-track">

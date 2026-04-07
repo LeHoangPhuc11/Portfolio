@@ -1,0 +1,108 @@
+{
+  "menu": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "projects": "Portfolio",
+    "skills": "Kỹ năng",
+    "contact": "Liên hệ",
+    "tech": "Công Nghệ",
+    "techproject": "Project"
+  },
+  "name": "Lê Hoàng Phúc",
+  "skills": {
+    "title": "Kỹ năng"
+  },
+  "home": {
+    "intro": "Xin Chào, Tôi là Phúc",
+    "title": "Frontend Developer",
+    "desc": "Tôi xây dựng giao diện người dùng hiện đại, responsive, tối ưu trải nghiệm và hiệu năng trên nhiều thiết bị, sử dụng React và các công nghệ web hiện đại.",
+    "tags": ["React", "JavaScript", "TypeScript", "Tailwind CSS"],
+    "projectBtn": "Dự Án",
+    "contactBtn": "Liên Hệ ✉"
+  },
+  "projects": {
+    "title": "Portfolio",
+    "details": "Chi tiết",
+    "list": [
+      {
+        "title": "Portfolio Website",
+        "description": "Portfolio cá nhân được xây dựng bằng React và TypeScript, với giao diện responsive phù hợp nhiều thiết bị. Ứng dụng hỗ trợ dark/light mode, chuyển đổi đa ngôn ngữ linh hoạt, tối ưu hiệu năng và mang lại trải nghiệm người dùng mượt mà, hiện đại.",
+        "tech": ["React", "TypeScript", "CSS"]
+      },
+      {
+        "title": "Key_Nexus",
+        "description": "Ứng dụng web thương mại điện tử xây dựng bằng React và TypeScript, hỗ trợ dark/light mode. Tích hợp chatbox và backend với CRUD, phân quyền người dùng, đảm bảo trải nghiệm mượt mà. Giao diện trực quan, tải nhanh, dự án đang trong quá trình hoàn thiện, hướng tới nền tảng hiện đại, linh hoạt và dễ mở rộng.",
+        "tech": ["React", "TypeScript", "CSS"]
+    }
+    ]
+  },
+  "techGroups": [
+    {
+      "title": "Frontend & Tools",
+      "items": [
+        { "name": "React", "icon": "src/assets/img/react.png" },
+        { "name": "TypeScript", "icon": "src/assets/img/typescript.png" },
+        { "name": "JavaScript", "icon": "src/assets/img/javascript.png" },
+        { "name": "HTML", "icon": "src/assets/img/html.png" },
+        { "name": "CSS", "icon": "src/assets/img/css.png" },
+        { "name": "Tailwind CSS", "icon": "src/assets/img/tailwind.png" },
+        { "name": "Git", "icon": "src/assets/img/git.png" },
+        { "name": "Postman", "icon": "src/assets/img/postman.png" }
+      ]
+    }
+  ],
+  "about": {
+    "title": "Giới Thiệu",
+    "intro": "Xin chào, Tôi là",
+    "name": "Lê Hoàng Phúc",
+    "role": "Frontend Developer",
+    "desc1": "Hiện tại tôi đang là sinh viên năm cuối ngành CNTT tại Đại học Công Nghiệp TP.HCM (IUH), tập trung phát triển giao diện web hiện đại. Sử dụng thành thạo ReactJS, TypeScript và các công nghệ frontend để xây dựng giao diện responsive và tối ưu hiệu năng.",
+    "desc2": "Tôi đã xây dựng website portfolio cá nhân và đang phát triển một dự án web thực tế. Ngoài ra, có tham gia hỗ trợ trong các dự án nhóm, qua đó tích lũy kinh nghiệm làm việc và cải thiện kỹ năng phát triển giao diện.",
+    "desc3": "Tôi có khả năng tự học tốt, tư duy logic và luôn chủ động trong công việc; mong muốn làm việc trong môi trường chuyên nghiệp để phát triển kỹ năng và đóng góp vào các sản phẩm thực tế.",
+    "cvBtn": "Tải CV",
+    "projectBtn": "Xem Dự Án"
+  },
+  "contact": {
+    "name": "Lê Hoàng Phúc",
+    "phone": "Số Điện Thoại",
+    "address": "Địa Chỉ",
+    "location": "Hồ Chí Minh",
+    "email": "Email",
+    "github": "GitHub",
+    "contactBtn": "Liên hệ ngay"
+  },
+  "detail": {
+    "description": "Mô tả",
+    "role": "Nhiệm vụ phát triển giao diện (Front-end)",
+    "tech": "Công nghệ sử dụng",
+    "github": "GitHub"
+  },
+  "project": {
+    "portfolio": {
+      "title": "Portfolio Website",
+      "description": "Portfolio cá nhân được xây dựng bằng React và TypeScript, với giao diện responsive phù hợp nhiều thiết bị. Ứng dụng hỗ trợ dark/light mode, đa ngôn ngữ linh hoạt, tối ưu hiệu năng và trải nghiệm người dùng mượt mà. Website thể hiện khả năng xây dựng giao diện hiện đại và quản lý cấu trúc frontend hiệu quả.",
+      "role": [
+        "Xây dựng giao diện portfolio bằng React + TypeScript + CSS",
+        "Thiết kế layout hiện đại với nhiều section",
+        "Implement responsive UI cho nhiều thiết bị",
+        "Xây dựng Dark/Light mode",
+        "Tích hợp đa ngôn ngữ (i18n)",
+        "Tối ưu UI/UX và animation",
+        "Quản lý state (theme, language)"
+      ]
+    },
+    "key_nexus": {
+      "title": "Key Nexus",
+      "description": "Ứng dụng web thương mại điện tử được xây dựng bằng React và TypeScript, với giao diện hỗ trợ dark/light mode. Dự án đã tích hợp chatbox và backend với các chức năng CRUD, phân quyền người dùng, nhưng vẫn đang trong quá trình hoàn thiện. Giao diện trực quan, tốc độ tải nhanh, tối ưu trải nghiệm mua sắm và quản lý sản phẩm. Dự án hướng tới nền tảng thương mại điện tử hiện đại, linh hoạt và dễ mở rộng cho các tính năng trong tương lai.",
+      "role": [
+        "Xây dựng giao diện responsive bằng React + TypeScript",
+        "Phát triển reusable components",
+        "Xây dựng Admin Dashboard",
+        "Thực hiện CRUD qua API",
+        "Quản lý state bằng Context/Zustand",
+        "Tối ưu UX/UI",
+        "Hỗ trợ Dark/Light Mode"
+      ]
+    }
+  }
+}

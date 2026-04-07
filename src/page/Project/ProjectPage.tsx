@@ -1,77 +1,24 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./ProjectPage.css";
 import { useNavigate } from "react-router-dom";
-import { useLang } from "@/components/context/LangContext";
-
-const techGroups = [
-  {
-    title: "Frontend & Tools",
-    items: [
-      { name: "React", icon: "src/assets/img/react.png" },
-      { name: "TypeScript", icon: "src/assets/img/typescript.png" },
-      { name: "JavaScript", icon: "src/assets/img/javascript.png" },
-      { name: "HTML", icon: "src/assets/img/html.png" },
-      { name: "CSS", icon: "src/assets/img/css.png" },
-      { name: "Tailwind CSS", icon: "src/assets/img/tailwind.png" },
-      { name: "Git", icon: "src/assets/img/git.png" },
-      { name: "Postman", icon: "src/assets/img/postman.png" },
-    ],
-  },
-];
-const projectsData = [
-  {
-    image: "src/assets/img/portfolio.png",
-    tech: ["React", "TypeScript", "CSS"],
-  },
-  {
-    image: "src/assets/img/portfolio.png",
-    tech: ["React", "TypeScript", "CSS"],
-  },
-];
-const content = {
-  vi: {
-    title: "Portfolio",
-    tabs: { projects: "Dự Án", tech: "Công Nghệ" },
-    details: "Chi tiết",
-    projects: [
-      {
-        title: "Portfolio Website",
-        description:
-          "Portfolio cá nhân được xây dựng bằng React và TypeScript, hỗ trợ responsive, dark/light mode và tối ưu trải nghiệm người dùng.",
-      },
-      {
-        title: "Key_Nexus",
-        description:
-          "Website thương mại điện tử bán đồ điện tử, tích hợp chatbox, responsive và dark/light mode, xây dựng bằng React + TypeScript.",
-      },
-    ],
-  },
-  en: {
-    title: "Portfolio",
-    tabs: { projects: "Projects", tech: "Tech Stack" },
-    details: "Details",
-    projects: [
-      {
-        title: "Portfolio Website",
-        description:
-          "A personal portfolio built with React and TypeScript, featuring responsive design, dark/light mode, and optimized UX.",
-      },
-      {
-        title: "Key_Nexus",
-        description:
-          "An e-commerce website for electronic products with chatbox integration, responsive UI, and dark/light mode.",
-      },
-    ],
-  },
-};
+import { useTranslation } from "react-i18next";
 
 const ProjectPage: React.FC = () => {
-  const [active, setActive] = useState("projects");
+  const [active, setActive] = useState<"projects" | "tech">("projects");
   const navigate = useNavigate();
   const ref = useRef<HTMLElement | null>(null);
   const [show, setShow] = useState(false);
-  const { lang } = useLang();
-  const t = content[lang];
+  const { t } = useTranslation();
+
+  const projects = t("projects.list", { returnObjects: true }) as {
+    title: string;
+    description: string;
+    tech: string[];
+  }[];
+  const techGroups = t("techGroups", { returnObjects: true }) as {
+    title: string;
+    items: { name: string; icon: string }[];
+  }[];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -90,32 +37,35 @@ const ProjectPage: React.FC = () => {
       ref={ref}
       className={`projects-section ${show ? "show" : ""}`}
     >
-      <h1 className="projects-title">{t.title}</h1>
+      <h1 className="projects-title">{t("projects.title")}</h1>
 
       <div className="projects-tabs">
         <div
           className={`tab ${active === "projects" ? "active" : ""}`}
           onClick={() => setActive("projects")}
         >
-          {t.tabs.projects}
+          {t("menu.techproject")}
         </div>
         <div
           className={`tab ${active === "tech" ? "active" : ""}`}
           onClick={() => setActive("tech")}
         >
-          {t.tabs.tech}
+          {t("menu.tech")}
         </div>
       </div>
 
       <div className="projects-content">
         {active === "projects" && (
           <div className="projects-grid">
-            {projectsData.map((proj, index) => (
+            {projects.map((proj, index) => (
               <div key={index} className="project-card">
                 <div className="project-inner">
-                  <img src={proj.image} alt={t.projects[index].title} />
-                  <h3>{t.projects[index].title}</h3>
-                  <p>{t.projects[index].description}</p>
+                  <img
+                    src={`src/assets/img/portfolio.png`}
+                    alt={proj.title}
+                  />
+                  <h3>{proj.title}</h3>
+                  <p>{proj.description}</p>
                   <div className="project-tech">
                     {proj.tech.map((tech, i) => (
                       <span key={i} className="tech-badge">
@@ -125,15 +75,16 @@ const ProjectPage: React.FC = () => {
                   </div>
                   <button
                     className="details-btn"
-                    onClick={() => navigate("/home/details")}
+                    onClick={() => navigate(`/home/projects/${index}`)}
                   >
-                    {t.details} <span className="arrow">➜</span>
+                    {t("projects.details")} <span className="arrow">➜</span>
                   </button>
                 </div>
               </div>
             ))}
           </div>
         )}
+
         {active === "tech" && (
           <div className="tech-groups">
             {techGroups.map((group, i) => (

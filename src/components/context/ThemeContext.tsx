@@ -10,10 +10,8 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  // ✅ Mặc định DARK luôn
   const [theme, setTheme] = useState<ThemeType>("dark");
 
-  // LOAD THEME (ưu tiên localStorage)
   useEffect(() => {
     try {
       const saved = localStorage.getItem("theme") as ThemeType | null;
@@ -21,7 +19,6 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
       if (saved === "light" || saved === "dark") {
         setTheme(saved);
       } else {
-        // ❌ bỏ system
         setTheme("dark");
       }
     } catch (error) {
@@ -29,11 +26,8 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     }
   }, []);
 
-  // APPLY + SAVE
   useEffect(() => {
-    // 🔥 nên dùng html thay vì body
     document.documentElement.setAttribute("data-theme", theme);
-
     try {
       localStorage.setItem("theme", theme);
     } catch (error) {

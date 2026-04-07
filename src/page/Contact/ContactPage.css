@@ -9,6 +9,7 @@
   --glass-bg: rgba(255, 255, 255, 0.08);
   --glass-hover: rgba(255, 255, 255, 0.15);
   --icon-color: #ffffff;
+   --icon-color-t: #ffffff;
 }
 [data-theme="light"] {
   --card-bg: rgba(191, 0, 0, 0.08);
@@ -26,6 +27,8 @@
   --glass-bg: rgba(173, 172, 172, 0.6);
   --glass-hover: rgba(255, 255, 255, 0.15);
   --icon-color: #030303;
+  --icon-color-t: #040404;
+
 }
 
 .contact-page-wrapper {
@@ -82,7 +85,7 @@
     0 4px 20px rgba(0, 0, 0, 0.25),
     inset 0 1px 1px rgba(255, 255, 255, 0.2);
 
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--icon-color-t);
   cursor: pointer;
   transition: all 0.25s ease;
 }
@@ -124,7 +127,7 @@
 
 /* Info */
 .contact-page-info {
-  margin-top: 50px; /* giảm từ 20px */
+  margin-top: 50px;
   font-size: 16px;
   color: var(--text-sub);
   display: flex;
