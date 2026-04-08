@@ -6,7 +6,7 @@
     "skills": "Kỹ năng",
     "contact": "Liên hệ",
     "tech": "Công Nghệ",
-    "techproject": "Project"
+    "techproject": "Dự Án"
   },
   "name": "Lê Hoàng Phúc",
   "skills": {
@@ -27,12 +27,14 @@
       {
         "title": "Portfolio Website",
         "description": "Portfolio cá nhân được xây dựng bằng React và TypeScript, với giao diện responsive phù hợp nhiều thiết bị. Ứng dụng hỗ trợ dark/light mode, chuyển đổi đa ngôn ngữ linh hoạt, tối ưu hiệu năng và mang lại trải nghiệm người dùng mượt mà, hiện đại.",
-        "tech": ["React", "TypeScript", "CSS"]
+        "tech": ["React", "TypeScript", "CSS"],
+        "image": "src/assets/img/portfolio1.png"
       },
       {
-        "title": "Key_Nexus",
-        "description": "Ứng dụng web thương mại điện tử xây dựng bằng React và TypeScript, hỗ trợ dark/light mode. Tích hợp chatbox và backend với CRUD, phân quyền người dùng, đảm bảo trải nghiệm mượt mà. Giao diện trực quan, tải nhanh, dự án đang trong quá trình hoàn thiện, hướng tới nền tảng hiện đại, linh hoạt và dễ mở rộng.",
-        "tech": ["React", "TypeScript", "CSS"]
+        "title": "E-commerce Website",
+        "description": "Ứng dụng web thương mại điện tử chuyên bán bàn phím và chuột máy tính, được xây dựng bằng React và TypeScript, hỗ trợ dark/light mode. Tích hợp chatbox và backend với CRUD, phân quyền người dùng, đảm bảo trải nghiệm mượt mà. Giao diện trực quan, tải nhanh, dự án đang trong quá trình hoàn thiện, hướng tới nền tảng hiện đại, linh hoạt và dễ mở rộng.",
+        "tech": ["React", "TypeScript", "CSS"],
+        "image": "src/assets/img/keynexus3.png"
     }
     ]
   },
@@ -92,8 +94,8 @@
       ]
     },
     "key_nexus": {
-      "title": "Key Nexus",
-      "description": "Ứng dụng web thương mại điện tử được xây dựng bằng React và TypeScript, với giao diện hỗ trợ dark/light mode. Dự án đã tích hợp chatbox và backend với các chức năng CRUD, phân quyền người dùng, nhưng vẫn đang trong quá trình hoàn thiện. Giao diện trực quan, tốc độ tải nhanh, tối ưu trải nghiệm mua sắm và quản lý sản phẩm. Dự án hướng tới nền tảng thương mại điện tử hiện đại, linh hoạt và dễ mở rộng cho các tính năng trong tương lai.",
+      "title": "E-commerce Website",
+      "description": "Ứng dụng web thương mại điện tử chuyên bán bàn phím và chuột máy tính, được xây dựng bằng React và TypeScript với giao diện hỗ trợ dark/light mode. Dự án đã tích hợp chatbox và backend với các chức năng CRUD, phân quyền người dùng, nhưng vẫn đang trong quá trình hoàn thiện. Giao diện trực quan, tốc độ tải nhanh, tối ưu trải nghiệm mua sắm và quản lý sản phẩm. Dự án hướng tới nền tảng thương mại điện tử hiện đại, linh hoạt và dễ mở rộng cho các tính năng trong tương lai.",
       "role": [
         "Xây dựng giao diện responsive bằng React + TypeScript",
         "Phát triển reusable components",

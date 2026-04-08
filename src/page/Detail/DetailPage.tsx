@@ -12,8 +12,8 @@ const projects = [
     id: "0",
     title: "Portfolio Website",
     images: [
-      "/src/assets/img/portfolio.png",
-      "/src/assets/img/portfolio.png",
+      "/src/assets/img/portfolio1.png",
+      "/src/assets/img/portfolio2.png",
       "/src/assets/img/portfolio.png",
     ],
     tech: ["React", "TypeScript", "CSS"],
@@ -23,9 +23,9 @@ const projects = [
     id: "1",
     title: "Key_Nexus",
     images: [
-      "/src/assets/img/portfolio.png",
-      "/src/assets/img/portfolio.png",
-      "/src/assets/img/portfolio.png",
+      "/src/assets/img/keynexus1.png",
+      "/src/assets/img/keynexus2.png",
+      "/src/assets/img/keynexus3.png",
     ],
     tech: ["React", "TypeScript", "CSS"],
     github: "https://github.com/nthuwng/key-nexus-fe",

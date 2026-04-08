@@ -14,6 +14,7 @@ const ProjectPage: React.FC = () => {
     title: string;
     description: string;
     tech: string[];
+    image: string;
   }[];
   const techGroups = t("techGroups", { returnObjects: true }) as {
     title: string;
@@ -25,7 +26,7 @@ const ProjectPage: React.FC = () => {
       ([entry]) => {
         if (entry.isIntersecting) setShow(true);
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -60,10 +61,7 @@ const ProjectPage: React.FC = () => {
             {projects.map((proj, index) => (
               <div key={index} className="project-card">
                 <div className="project-inner">
-                  <img
-                    src={`src/assets/img/portfolio.png`}
-                    alt={proj.title}
-                  />
+                  <img src={proj.image} alt={proj.title} />
                   <h3>{proj.title}</h3>
                   <p>{proj.description}</p>
                   <div className="project-tech">

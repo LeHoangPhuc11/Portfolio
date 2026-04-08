@@ -1,8 +1,8 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-import en from "@/locales/en/translation.json";
-import vi from "@/locales/vi/translation.json";
+import en from "@/language/en/translation.json";
+import vi from "@/language/vi/translation.json";
 
 
 const savedLang = localStorage.getItem("lng") || "vi";

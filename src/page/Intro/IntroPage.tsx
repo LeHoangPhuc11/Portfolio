@@ -4,7 +4,7 @@ import "./IntroPage.css";
 import DeveloperPage from "@/components/common/developerPage";
 
 const icons = [
-  { icon: FaEnvelope , link: "/home/contact" },
+  { icon: FaEnvelope, link: "/home/contact" },
   { icon: FaUser, link: "/home" },
   { icon: FaGithub, link: "https://github.com/LeHoangPhuc11" },
 ];
@@ -55,7 +55,7 @@ const IntroPage = () => {
                 navigate("/home");
               }}
             >
-              www.portfolio.my.com
+              <span className="typing_text">www.portfolio.phuc.com</span>
             </button>
           </div>
           <div className="intro_right">

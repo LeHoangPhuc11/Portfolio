@@ -5,7 +5,8 @@
     "projects": "Portfolio",
     "skills": "Skills",
     "contact": "Contact",
-    "tech": "Tech Stack"
+    "tech": "Tech Stack",
+    "techproject": "Project"
   },
   "name": "Le Hoang Phuc",
   "skills": {
@@ -27,12 +28,14 @@
       {
         "title": "Portfolio Website",
         "description": "A personal portfolio built with React and TypeScript, featuring a responsive design for multiple devices. The application supports dark/light mode, multi-language switching, optimized performance, and provides a smooth, modern user experience.",
-        "tech": ["React", "TypeScript", "CSS"]
+        "tech": ["React", "TypeScript", "CSS"],
+        "image": "src/assets/img/portfolio1.png"
       },
       {
-        "title": "Key_Nexus",
-        "description": "An e-commerce web app built with React and TypeScript, supporting dark/light mode. Features include a chatbox and backend with CRUD and user roles, ensuring smooth user experience. Intuitive, fast-loading interface, currently under development, aiming for a modern, flexible, and scalable platform.",
-        "tech": ["React", "TypeScript", "CSS"]
+        "title": "E-commerce Website",
+        "description": "An e-commerce web application specializing in computer keyboards and mice, built with React and TypeScript, supporting both dark and light modes. The system integrates a chatbox and backend with full CRUD functionality and user role-based access control, ensuring a smooth user experience. Featuring an intuitive interface and fast loading performance, the project is currently under development, aiming to become a modern, flexible, and scalable platform.",
+        "tech": ["React", "TypeScript", "CSS"],
+        "image": "src/assets/img/keynexus3.png"
       }
     ]
   },
@@ -92,8 +95,8 @@
       ]
     },
     "key_nexus": {
-      "title": "Key Nexus",
-      "description": "An e-commerce web application built with React and TypeScript, featuring a user interface that supports dark/light mode. The project integrates a chatbox and backend with CRUD functionalities and user authorization, and is still under development. It offers an intuitive interface, fast loading speed, and an optimized experience for shopping and product management. The project aims to become a modern, flexible, and scalable e-commerce platform for future enhancements.",
+      "title": "E-commerce Website",
+      "description": "An e-commerce web application specializing in selling computer keyboards and mice, built with React and TypeScript, featuring support for both dark and light modes. The project integrates a chatbox and backend with CRUD functionalities and user authorization, and is still under development. It offers an intuitive interface, fast loading speed, and an optimized experience for shopping and product management. The project aims to become a modern, flexible, and scalable e-commerce platform for future enhancements.",
       "role": [
         "Build responsive UI",
         "Develop reusable components",
