@@ -1,5 +1,5 @@
 import { GithubOutlined, MailOutlined } from "@ant-design/icons";
-import { FaDiscord } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 import "./layout.footer.css";
 import { useTheme } from "@/components/context/ThemeContext";
 
@@ -23,11 +23,11 @@ const Footer = () => {
           </a>
 
           <a
-            href="https://discord.com/"
+            href="https://www.facebook.com/le.hoangphuc.7906932"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaDiscord />
+            <FaFacebook />
           </a>
 
           <a href="mailto:phucle.13122003@gmail.com">

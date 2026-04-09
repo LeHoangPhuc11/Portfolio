@@ -9,7 +9,7 @@
   --glass-bg: rgba(255, 255, 255, 0.08);
   --glass-hover: rgba(255, 255, 255, 0.15);
   --icon-color: #ffffff;
-   --icon-color-t: #ffffff;
+  --icon-color-t: #ffffff;
 }
 [data-theme="light"] {
   --card-bg: rgba(191, 0, 0, 0.08);
@@ -28,7 +28,6 @@
   --glass-hover: rgba(255, 255, 255, 0.15);
   --icon-color: #030303;
   --icon-color-t: #040404;
-
 }
 
 .contact-page-wrapper {
@@ -183,7 +182,7 @@
   transform: scale(1.1);
 }
 .contact-page-info p:hover .contact-icon {
-  color: #fff;
+  color: #ff0000;
 }
 
 /* Footer */
