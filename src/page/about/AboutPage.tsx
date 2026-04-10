@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./AboutPage.css";
 import { useTranslation } from "react-i18next";
+import { images } from "@/assets/images"
 
 const AboutPage: React.FC = () => {
   const { t } = useTranslation(); // Sử dụng hook i18n
@@ -39,7 +40,7 @@ const AboutPage: React.FC = () => {
             }}
           >
             <img
-              src="src/assets/img/LeHoangPhuc.jpg"
+              src={images.profile}
               alt="avatar"
               className="about-avatar"
             />

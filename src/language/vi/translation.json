@@ -28,28 +28,28 @@
         "title": "Portfolio Website",
         "description": "Portfolio cá nhân được xây dựng bằng React và TypeScript, với giao diện responsive phù hợp nhiều thiết bị. Ứng dụng hỗ trợ dark/light mode, chuyển đổi đa ngôn ngữ linh hoạt, tối ưu hiệu năng và mang lại trải nghiệm người dùng mượt mà, hiện đại.",
         "tech": ["React", "TypeScript", "CSS"],
-        "image": "src/assets/img/portfolio1.png"
+        "image": "portfolio1"
       },
       {
         "title": "E-commerce Website",
         "description": "Ứng dụng web thương mại điện tử chuyên bán bàn phím và chuột máy tính, được xây dựng bằng React và TypeScript, hỗ trợ dark/light mode. Tích hợp chatbox và backend với CRUD, phân quyền người dùng, đảm bảo trải nghiệm mượt mà. Giao diện trực quan, tải nhanh, dự án đang trong quá trình hoàn thiện, hướng tới nền tảng hiện đại, linh hoạt và dễ mở rộng.",
         "tech": ["React", "TypeScript", "CSS"],
-        "image": "src/assets/img/keynexus3.png"
-    }
+        "image": "keynexus3"
+      }
     ]
   },
   "techGroups": [
     {
       "title": "Frontend & Tools",
       "items": [
-        { "name": "React", "icon": "src/assets/img/react.png" },
-        { "name": "TypeScript", "icon": "src/assets/img/typescript.png" },
-        { "name": "JavaScript", "icon": "src/assets/img/javascript.png" },
-        { "name": "HTML", "icon": "src/assets/img/html.png" },
-        { "name": "CSS", "icon": "src/assets/img/css.png" },
-        { "name": "Tailwind CSS", "icon": "src/assets/img/tailwind.png" },
-        { "name": "Git", "icon": "src/assets/img/git.png" },
-        { "name": "Postman", "icon": "src/assets/img/postman.png" }
+        { "name": "React", "icon": "react" },
+        { "name": "TypeScript", "icon": "typescript" },
+        { "name": "JavaScript", "icon": "javascript" },
+        { "name": "HTML", "icon": "html" },
+        { "name": "CSS", "icon": "css" },
+        { "name": "Tailwind CSS", "icon": "tailwind" },
+        { "name": "Git", "icon": "git" },
+        { "name": "Postman", "icon": "postman" }
       ]
     }
   ],

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import AboutPage from "../about/AboutPage";
 import ProjectPage from "../project/ProjectPage";
 import SkillsPage from "../skills/SkillsPage";
+import { images, techIcons } from "@/assets/images"
 
 const HomePage: React.FC = () => {
   const { t } = useTranslation();
@@ -59,18 +60,10 @@ const HomePage: React.FC = () => {
         <div className="right1">
           <div className="orbit-container">
             <div className="center-avatar">
-              <img src="src/assets/img/avata.png" alt="center" />
+              <img src={images.avatar} alt="center" />
             </div>
             <div className="orbit">
-              {[
-                "src/assets/img/react.png",
-                "src/assets/img/javascript.png",
-                "src/assets/img/typescript.png",
-                "src/assets/img/tailwind.png",
-                "src/assets/img/github.png",
-                "src/assets/img/css.png",
-                "src/assets/img/html.png"
-              ].map((img, index) => (
+              {techIcons.map((img, index) => (
                 <div
                   key={index}
                   className="orbit-item"

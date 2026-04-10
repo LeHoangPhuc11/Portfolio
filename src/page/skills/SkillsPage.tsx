@@ -1,29 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./SkillsPage.css";
 import { useTranslation } from "react-i18next";
+import { imageMap } from "@/assets/images";
 
 const skills = [
-  { name: "React", icon: "src/assets/img/react.png" },
-  {
-    name: "React Router",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/reactrouter/reactrouter-original.svg",
-  },
-  { name: "JavaScript", icon: "src/assets/img/javascript.png" },
-  { name: "TypeScript", icon: "src/assets/img/typescript.png" },
-  { name: "GitHub", icon: "src/assets/img/github.png" },
-  { name: "Postman", icon: "src/assets/img/postman.png" },
-  {
-    name: "Antd",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/antdesign/antdesign-original.svg",
-  },
-  { name: "HTML", icon: "src/assets/img/html.png" },
-  {
-    name: "Axios",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/axios/axios-plain.svg",
-  },
-  { name: "Git", icon: "src/assets/img/git.png" },
-  { name: "Css", icon: "src/assets/img/css.png" },
-  { name: "Tailwindcss", icon: "src/assets/img/tailwind.png" },
+  { name: "React", icon: "react" },
+  { name: "React Router", icon: "reactrouter" },
+  { name: "JavaScript", icon: "javascript" },
+  { name: "TypeScript", icon: "typescript" },
+  { name: "GitHub", icon: "github" },
+  { name: "Postman", icon: "postman" },
+  { name: "Antd", icon: "antd" },
+  { name: "HTML", icon: "html" },
+  { name: "Axios", icon: "axios" },
+  { name: "Git", icon: "git" },
+  { name: "Css", icon: "css" },
+  { name: "Tailwindcss", icon: "tailwind" },
 ];
 
 const SkillsPage: React.FC = () => {
@@ -54,7 +46,7 @@ const SkillsPage: React.FC = () => {
         <div className="slider-track">
           {[...skills, ...skills].map((skill, index) => (
             <div className="skill-card" key={index}>
-              <img src={skill.icon} alt={skill.name} />
+              <img src={imageMap[skill.icon]} alt={skill.name} />
               <p>{skill.name}</p>
             </div>
           ))}

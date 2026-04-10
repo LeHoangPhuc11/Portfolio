@@ -4,6 +4,7 @@ import { ArrowLeftOutlined, GithubOutlined } from "@ant-design/icons";
 import "./DetailPage.css";
 import BackgroundBlobs from "@/components/backround/BackgroundBlobs";
 import { useTranslation } from "react-i18next";
+import { imageMap } from "@/assets/images";
 
 const { Title, Paragraph } = Typography;
 
@@ -11,22 +12,14 @@ const projects = [
   {
     id: "0",
     title: "Portfolio Website",
-    images: [
-      "/src/assets/img/portfolio1.png",
-      "/src/assets/img/portfolio2.png",
-      "/src/assets/img/portfolio.png",
-    ],
+    images: ["portfolio1", "portfolio2", "portfolio"],
     tech: ["React", "TypeScript", "CSS"],
     github: "https://github.com/LeHoangPhuc11/Portfolio",
   },
   {
     id: "1",
     title: "Key_Nexus",
-    images: [
-      "/src/assets/img/keynexus1.png",
-      "/src/assets/img/keynexus2.png",
-      "/src/assets/img/keynexus3.png",
-    ],
+    images: ["keynexus1", "keynexus2", "keynexus3"],
     tech: ["React", "TypeScript", "CSS"],
     github: "https://github.com/nthuwng/key-nexus-fe",
   },
@@ -59,7 +52,7 @@ const DetailPage = () => {
           <Carousel autoplay className="detail-carousel">
             {project.images.map((img, i) => (
               <div key={i}>
-                <img src={img} alt="project" className="carousel-img" />
+                <img src={imageMap[img]} alt="project" className="carousel-img" />
               </div>
             ))}
           </Carousel>

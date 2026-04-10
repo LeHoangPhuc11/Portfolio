@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./ProjectPage.css";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { imageMap } from "@/assets/images";
 
 const ProjectPage: React.FC = () => {
   const [active, setActive] = useState<"projects" | "tech">("projects");
@@ -61,7 +62,7 @@ const ProjectPage: React.FC = () => {
             {projects.map((proj, index) => (
               <div key={index} className="project-card">
                 <div className="project-inner">
-                  <img src={proj.image} alt={proj.title} />
+                  <img src={imageMap[proj.image]} alt={proj.title} />
                   <h3>{proj.title}</h3>
                   <p>{proj.description}</p>
                   <div className="project-tech">
@@ -91,7 +92,7 @@ const ProjectPage: React.FC = () => {
                 <div className="tech-grid">
                   {group.items.map((item, idx) => (
                     <div key={idx} className="tech-card">
-                      <img src={item.icon} alt={item.name} />
+                      <img src={imageMap[item.icon]} alt={item.name} />
                       <span>{item.name}</span>
                     </div>
                   ))}

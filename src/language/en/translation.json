@@ -28,13 +28,13 @@
         "title": "Portfolio Website",
         "description": "A personal portfolio built with React and TypeScript, featuring a responsive design for multiple devices. The application supports dark/light mode, multi-language switching, optimized performance, and provides a smooth, modern user experience.",
         "tech": ["React", "TypeScript", "CSS"],
-        "image": "src/assets/img/portfolio1.png"
+        "image": "portfolio1"
       },
       {
         "title": "E-commerce Website",
         "description": "An e-commerce web application specializing in computer keyboards and mice, built with React and TypeScript, supporting both dark and light modes. The system integrates a chatbox and backend with full CRUD functionality and user role-based access control, ensuring a smooth user experience. Featuring an intuitive interface and fast loading performance, the project is currently under development, aiming to become a modern, flexible, and scalable platform.",
         "tech": ["React", "TypeScript", "CSS"],
-        "image": "src/assets/img/keynexus3.png"
+       "image": "keynexus3"
       }
     ]
   },
