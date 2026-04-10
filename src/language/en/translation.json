@@ -42,14 +42,14 @@
     {
       "title": "Frontend & Tools",
       "items": [
-        { "name": "React", "icon": "src/assets/img/react.png" },
-        { "name": "TypeScript", "icon": "src/assets/img/typescript.png" },
-        { "name": "JavaScript", "icon": "src/assets/img/javascript.png" },
-        { "name": "HTML", "icon": "src/assets/img/html.png" },
-        { "name": "CSS", "icon": "src/assets/img/css.png" },
-        { "name": "Tailwind CSS", "icon": "src/assets/img/tailwind.png" },
-        { "name": "Git", "icon": "src/assets/img/git.png" },
-        { "name": "Postman", "icon": "src/assets/img/postman.png" }
+        { "name": "React", "icon": "react" },
+        { "name": "TypeScript", "icon": "typescript" },
+        { "name": "JavaScript", "icon": "javascript" },
+        { "name": "HTML", "icon": "html" },
+        { "name": "CSS", "icon": "css" },
+        { "name": "Tailwind CSS", "icon": "tailwind" },
+        { "name": "Git", "icon": "git" },
+        { "name": "Postman", "icon": "postman" }
       ]
     }
   ],
