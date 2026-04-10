@@ -18,7 +18,6 @@
       "styles/*": ["./src/styles/*"],
       "types/*": ["./src/types/*"]
     },
-    "ignoreDeprecations": "6.0",
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
@@ -26,7 +25,6 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    /* JSON + Lottie fix */
     "resolveJsonModule": true,
     "esModuleInterop": true,
 
