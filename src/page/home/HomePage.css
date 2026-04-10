@@ -176,12 +176,22 @@
     background-position: -200% center;
   }
 }
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .home-container {
     flex-direction: column;
-    align-items: center; /* kéo về trái */
+    align-items: center; 
     padding: 20px;
   }
   .left {
@@ -191,7 +201,10 @@
   .content h1 {
     font-size: 42px;
     white-space: normal;
+    overflow: visible;
     border-right: none;
+    animation: none;
+    animation: slideInLeft 0.8s ease forwards, shine 4s linear infinite;
   }
   .content h2,
   .content h3 {
@@ -208,14 +221,13 @@
     margin-top: 30px;
     display: flex;
     gap: 16px;
-    flex-direction: row; /* thêm dòng này */
+    flex-direction: row; 
   }
   .btn {
-    width: auto; /* bỏ 40% */
+    width: auto; 
     padding: 12px 20px;
   }
 }
-
 /* RIGHT */
 .right1 {
   display: flex;
