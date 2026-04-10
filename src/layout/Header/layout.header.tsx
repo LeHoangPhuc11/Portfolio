@@ -91,7 +91,7 @@ const AppHeader: React.FC = () => {
               }}
             >
               <img
-                src="src/assets/img/logo.png"
+                src="/logo.png"
                 alt="Logo"
                 className="logo-icon"
               />
