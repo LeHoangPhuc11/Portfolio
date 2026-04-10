@@ -3,9 +3,9 @@ import "./HomePage.css";
 import { useTranslation } from "react-i18next";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import AboutPage from "../About/AboutPage";
-import ProjectPage from "../Project/ProjectPage";
-import SkillsPage from "../Skills/SkillsPage";
+import AboutPage from "../about/AboutPage";
+import ProjectPage from "../project/ProjectPage";
+import SkillsPage from "../skills/SkillsPage";
 
 const HomePage: React.FC = () => {
   const { t } = useTranslation();

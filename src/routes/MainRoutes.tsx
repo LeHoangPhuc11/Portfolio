@@ -1,9 +1,9 @@
-import IntroPage from "../page/Intro/IntroPage";
+import IntroPage from "../page/intro/IntroPage";
 import MainLayout from "../layout/layout.main";
-import HomePage from "../page/Home/HomePage";
+import HomePage from "../page/home/HomePage";
 import { Route, Routes } from "react-router-dom";
-import ContactPage from "@/page/Contact/ContactPage";
-import DetailPage from "@/page/Detail/DetailPage";
+import ContactPage from "@/page/contact/ContactPage";
+import DetailPage from "@/page/detail/DetailPage";
 import NotFoundPage from "@/components/common/404";
 
 const MainRouters = () => {
