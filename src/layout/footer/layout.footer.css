@@ -69,17 +69,3 @@
     font-size: 12px;
   }
 }
-/* ANIMATION: slide up when load */
-.footer {
-  animation: footerSlideUp 0.8s ease-out;
-}
-@keyframes footerSlideUp {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}

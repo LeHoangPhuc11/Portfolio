@@ -34,7 +34,7 @@
         "title": "E-commerce Website",
         "description": "An e-commerce web application specializing in computer keyboards and mice, built with React and TypeScript, supporting both dark and light modes. The system integrates a chatbox and backend with full CRUD functionality and user role-based access control, ensuring a smooth user experience. Featuring an intuitive interface and fast loading performance, the project is currently under development, aiming to become a modern, flexible, and scalable platform.",
         "tech": ["React", "TypeScript", "CSS"],
-       "image": "keynexus3"
+        "image": "keynexus3"
       }
     ]
   },
@@ -84,26 +84,24 @@
       "title": "Portfolio Website",
       "description": "A personal portfolio built with React and TypeScript, featuring a responsive design that adapts to multiple devices. The application supports dark/light mode, flexible internationalization, and is optimized for performance and smooth user experience. The website demonstrates the ability to build modern interfaces and effectively manage frontend architecture.",
       "role": [
-        "Build UI with React + TypeScript + CSS",
-        "Design modern layout sections",
-        "Implement responsive UI",
-        "Build Dark/Light mode",
-        "Integrate i18n",
-        "Optimize UI/UX and animations",
-        "Manage state (theme, language)"
+        "Designed and developed a personal portfolio to showcase projects and technical skills",
+        "Built a modern, responsive user interface using React, TypeScript, and CSS",
+        "Implemented Dark/Light mode and multi-language support (i18n) to enhance user experience",
+        "Optimized performance and UI/UX for smooth and consistent interactions across devices"
       ]
     },
     "key_nexus": {
       "title": "E-commerce Website",
       "description": "An e-commerce web application specializing in selling computer keyboards and mice, built with React and TypeScript, featuring support for both dark and light modes. The project integrates a chatbox and backend with CRUD functionalities and user authorization, and is still under development. It offers an intuitive interface, fast loading speed, and an optimized experience for shopping and product management. The project aims to become a modern, flexible, and scalable e-commerce platform for future enhancements.",
       "role": [
-        "Build responsive UI",
-        "Develop reusable components",
-        "Create Admin Dashboard",
-        "Handle CRUD via API",
-        "Manage state with Context/Zustand",
-        "Optimize UX/UI",
-        "Support Dark/Light mode"
+        "Developed responsive user interfaces using React and TypeScript across multiple devices",
+        "Built reusable components to improve scalability and maintainability",
+        "Designed and implemented an Admin Dashboard system",
+        "Integrated APIs and handled CRUD operations (Create, Read, Update, Delete)",
+        "Managed application state using Context API and Zustand",
+        "Enhanced UI/UX to improve overall user experience",
+        "Implemented Dark/Light mode for flexible theming",
+        "Optimized performance for smooth data interactions and user experience"
       ]
     }
   }

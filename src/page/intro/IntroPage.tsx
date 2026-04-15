@@ -55,7 +55,7 @@ const IntroPage = () => {
                 navigate("/home");
               }}
             >
-              <span className="typing_text">www.portfolio.phuc.com</span>
+              <span className="typing_text">www.portfolio.phuc.xyz</span>
             </button>
           </div>
           <div className="intro_right">

@@ -84,26 +84,24 @@
       "title": "Portfolio Website",
       "description": "Portfolio cá nhân được xây dựng bằng React và TypeScript, với giao diện responsive phù hợp nhiều thiết bị. Ứng dụng hỗ trợ dark/light mode, đa ngôn ngữ linh hoạt, tối ưu hiệu năng và trải nghiệm người dùng mượt mà. Website thể hiện khả năng xây dựng giao diện hiện đại và quản lý cấu trúc frontend hiệu quả.",
       "role": [
-        "Xây dựng giao diện portfolio bằng React + TypeScript + CSS",
-        "Thiết kế layout hiện đại với nhiều section",
-        "Implement responsive UI cho nhiều thiết bị",
-        "Xây dựng Dark/Light mode",
-        "Tích hợp đa ngôn ngữ (i18n)",
-        "Tối ưu UI/UX và animation",
-        "Quản lý state (theme, language)"
+        "Thiết kế và phát triển website portfolio cá nhân để trình bày kỹ năng và các dự án đã thực hiện",
+        "Xây dựng giao diện hiện đại, responsive bằng React, TypeScript và CSS",
+        "Triển khai Dark/Light mode và hỗ trợ đa ngôn ngữ (i18n) nhằm nâng cao trải nghiệm người dùng",
+        "Tối ưu hiệu năng và UI/UX để đảm bảo website hoạt động mượt mà trên nhiều thiết bị"
       ]
     },
     "key_nexus": {
       "title": "E-commerce Website",
       "description": "Ứng dụng web thương mại điện tử chuyên bán bàn phím và chuột máy tính, được xây dựng bằng React và TypeScript với giao diện hỗ trợ dark/light mode. Dự án đã tích hợp chatbox và backend với các chức năng CRUD, phân quyền người dùng, nhưng vẫn đang trong quá trình hoàn thiện. Giao diện trực quan, tốc độ tải nhanh, tối ưu trải nghiệm mua sắm và quản lý sản phẩm. Dự án hướng tới nền tảng thương mại điện tử hiện đại, linh hoạt và dễ mở rộng cho các tính năng trong tương lai.",
       "role": [
-        "Xây dựng giao diện responsive bằng React + TypeScript",
-        "Phát triển reusable components",
-        "Xây dựng Admin Dashboard",
-        "Thực hiện CRUD qua API",
-        "Quản lý state bằng Context/Zustand",
-        "Tối ưu UX/UI",
-        "Hỗ trợ Dark/Light Mode"
+        "Phát triển giao diện responsive bằng React và TypeScript, đảm bảo tương thích trên nhiều thiết bị",
+        "Xây dựng các component tái sử dụng nhằm tăng khả năng mở rộng và bảo trì",
+        "Thiết kế và triển khai hệ thống Admin Dashboard",
+        "Tích hợp API và thực hiện các chức năng CRUD (Create, Read, Update, Delete)",
+        "Quản lý state ứng dụng bằng Context API và Zustand",
+        "Tối ưu UI/UX nhằm cải thiện trải nghiệm người dùng",
+        "Hỗ trợ Dark/Light mode để tăng tính linh hoạt giao diện",
+        "Tối ưu hiệu năng để đảm bảo trải nghiệm mượt mà khi thao tác dữ liệu"
       ]
     }
   }
